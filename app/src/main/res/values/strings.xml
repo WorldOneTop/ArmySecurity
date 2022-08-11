@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">ArmySecurity</string>
+
+    <string name="tab_btm_myPage">찜 목록</string>
+    <string name="tab_btm_search">찾아보기</string>
+    <string name="tab_btm_event">행사</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

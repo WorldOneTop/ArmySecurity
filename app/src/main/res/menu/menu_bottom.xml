@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_btm_event"
+        android:icon="@drawable/icon_tab_event"
+        android:title="@string/tab_btm_event" />
 
+    <item
+        android:id="@+id/tab_btm_myPage"
+        android:icon="@drawable/icon_tab_mypage"
+        android:title="@string/tab_btm_myPage" />
+
+    <item
+        android:id="@+id/tab_btm_search"
+        android:icon="@drawable/icon_tab_search"
+        android:title="@string/tab_btm_search" />
 </menu>
