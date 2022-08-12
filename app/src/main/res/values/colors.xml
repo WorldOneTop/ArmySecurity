@@ -4,10 +4,12 @@
     <color name="primaryColor">#607D8B</color>
     <color name="primaryLightColor">#CFD8DC</color>
     <color name="primaryDarkColor">#455A64</color>
+    <color name="primaryBackgroundColor">#F9F9F9</color>
 
     <color name="secondaryColor">#757575</color>
     <color name="secondaryLightColor">#BDBDBD</color>
     <color name="secondaryDarkColor">#212121</color>
+    <color name="secondaryBackgroundColor">#f3f9f9</color>
 
     <color name="primaryTextColor">#212121</color>
     <color name="secondaryTextColor">#757575</color>
@@ -19,7 +21,7 @@
     <color name="lightBlue">#80d6ff</color>
     <color name="black">#1b1b1b</color>
     <color name="darkGray">#494949</color>
-    <color name="white">#fafafa</color>
+    <color name="white">#FFFFFF</color>
     <color name="lightGray">#c7c7c7</color>
 
 </resources>

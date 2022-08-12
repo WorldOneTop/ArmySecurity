@@ -18,7 +18,8 @@
             android:id="@+id/mainToolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primaryColor"/>
+            android:background="@color/primaryColor"
+            app:titleTextColor="@color/white"/>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/mainFragment"
@@ -31,6 +32,7 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navBottom"
+            android:layout_gravity="bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:itemTextColor="@drawable/nav_selector_color"
@@ -46,5 +48,5 @@
         android:fitsSystemWindows="true"
         app:itemTextColor="@drawable/nav_selector_color"
         app:itemIconTint="@drawable/nav_selector_color"
-        app:menu="@menu/menu_bottom" />
+        app:menu="@menu/menu_bottom"/>
 </androidx.drawerlayout.widget.DrawerLayout>
