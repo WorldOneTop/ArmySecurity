@@ -33,6 +33,8 @@
             android:id="@+id/navBottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:itemTextColor="@drawable/nav_selector_color"
+            app:itemIconTint="@drawable/nav_selector_color"
             app:menu="@menu/menu_bottom" />
     </LinearLayout>
 
@@ -42,5 +44,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        app:itemTextColor="@drawable/nav_selector_color"
+        app:itemIconTint="@drawable/nav_selector_color"
         app:menu="@menu/menu_bottom" />
 </androidx.drawerlayout.widget.DrawerLayout>
