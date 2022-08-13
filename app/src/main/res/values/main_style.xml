@@ -16,15 +16,37 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="cardview_search">
+    <style name="cardview_large">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">250dp</item>
         <item name="cardCornerRadius">20dp</item>
         <item name="cardElevation">0dp</item>
     </style>
+    <style name="cardview_small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="cardCornerRadius">15dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+    <style name="cardview_image">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:tintMode">src_atop</item>
+    </style>
 
     <style name="icon_search">
         <item name="android:src">@drawable/icon_tab_search</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:contentDescription">@string/search</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="tint">@color/white</item>
+    </style>
+    <style name="icon_event">
+        <item name="android:src">@drawable/icon_tab_event</item>
         <item name="android:layout_width">30dp</item>
         <item name="android:layout_height">30dp</item>
         <item name="android:layout_margin">20dp</item>

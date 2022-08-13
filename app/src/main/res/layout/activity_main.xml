@@ -37,6 +37,7 @@
             android:layout_height="wrap_content"
             app:itemTextColor="@drawable/nav_selector_color"
             app:itemIconTint="@drawable/nav_selector_color"
+            android:background="@color/primaryBackgroundColor"
             app:menu="@menu/menu_bottom" />
     </LinearLayout>
 
@@ -48,5 +49,6 @@
         android:fitsSystemWindows="true"
         app:itemTextColor="@drawable/nav_selector_color"
         app:itemIconTint="@drawable/nav_selector_color"
+        android:background="@color/primaryBackgroundColor"
         app:menu="@menu/menu_bottom"/>
 </androidx.drawerlayout.widget.DrawerLayout>

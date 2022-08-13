@@ -11,18 +11,16 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cemeteryLayout"
-        style="@style/cardview_search">
+        style="@style/cardview_large">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                app:tint="#50000000"
-                android:tintMode="src_atop"
                 android:src="@drawable/img_card_cemetery"
-                android:contentDescription="@string/search_cemetery_title" />
+                android:contentDescription="@string/search_cemetery_title"
+                style="@style/cardview_image"
+                app:tint="#50000000"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/cemeteryIcon"
@@ -51,18 +49,16 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/guarderLayout"
-        style="@style/cardview_search">
+        style="@style/cardview_large">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                app:tint="#33000000"
-                android:tintMode="src_atop"
                 android:src="@drawable/img_card_guarder"
-                android:contentDescription="@string/search_guarder_title" />
+                android:contentDescription="@string/search_guarder_title"
+                style="@style/cardview_image"
+                app:tint="#33000000"
+                tools:ignore="MissingConstraints" />
 
             <ImageView
                 android:id="@+id/guarderIcon"

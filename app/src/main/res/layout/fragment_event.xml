@@ -1,14 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.EventFragment">
+    android:orientation="vertical"
+    tools:context=".ui.SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/tab_btm_event" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
 
-</FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/warLayout"
+            style="@style/cardview_small"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/cardview_image"
+                    android:contentDescription="@string/search_cemetery_title"
+                    android:src="@drawable/img_card_war"
+                    app:tint="#3a000000"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/warIcon"
+                    style="@style/icon_event"
+                    tools:ignore="ContentDescription,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/warSubTitle"
+                    style="@style/textview_card_sub_title"
+                    android:text="@string/event_war_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/warIcon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/eventLayout"
+            style="@style/cardview_small"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/cardview_image"
+                    android:contentDescription="@string/search_cemetery_title"
+                    android:src="@drawable/img_card_event"
+                    app:tint="#50000000"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/eventIcon"
+                    style="@style/icon_event"
+                    tools:ignore="ContentDescription,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/eventSubTitle"
+                    style="@style/textview_card_sub_title"
+                    android:text="@string/event_event_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/eventIcon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/flyLayout"
+            style="@style/cardview_small"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/cardview_image"
+                    android:contentDescription="@string/search_cemetery_title"
+                    android:src="@drawable/img_card_fly"
+                    app:tint="#24000000"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/flyIcon"
+                    style="@style/icon_event"
+                    tools:ignore="ContentDescription,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/flySubTitle"
+                    style="@style/textview_card_sub_title"
+                    android:text="@string/event_fly_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/flyIcon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/saleLayout"
+            style="@style/cardview_small"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/cardview_image"
+                    android:contentDescription="@string/search_cemetery_title"
+                    android:src="@drawable/img_card_sale"
+                    app:tint="#30000000"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/saleIcon"
+                    style="@style/icon_event"
+                    tools:ignore="ContentDescription,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/saleSubTitle"
+                    style="@style/textview_card_sub_title"
+                    android:text="@string/event_sale_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/saleIcon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pledgeLayout"
+            style="@style/cardview_small"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/cardview_image"
+                    android:contentDescription="@string/search_cemetery_title"
+                    android:src="@drawable/img_card_pledge"
+                    app:tint="#3a000000"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/pledgeIcon"
+                    style="@style/icon_event"
+                    tools:ignore="ContentDescription,MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/pledgeSubTitle"
+                    style="@style/textview_card_sub_title"
+                    android:text="@string/event_pledge_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/pledgeIcon"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</ScrollView>
