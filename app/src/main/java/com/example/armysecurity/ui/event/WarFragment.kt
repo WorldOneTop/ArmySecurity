@@ -14,6 +14,7 @@ class WarFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentWarBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(

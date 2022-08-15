@@ -42,7 +42,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/eventLayout"
+            android:id="@+id/tripLayout"
             style="@style/cardview_small"
             android:layout_marginBottom="20dp">
 

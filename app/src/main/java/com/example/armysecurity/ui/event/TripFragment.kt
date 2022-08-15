@@ -14,6 +14,7 @@ class TripFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentTripBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(

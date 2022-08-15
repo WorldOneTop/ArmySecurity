@@ -14,6 +14,7 @@ class SaleFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentSaleBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(
