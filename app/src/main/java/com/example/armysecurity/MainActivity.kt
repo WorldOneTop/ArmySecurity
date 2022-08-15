@@ -44,20 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.navBottom.setupWithNavController(navController)
 
-//        navController.addOnDestinationChangedListener { _, destination, _ ->
-//            when (destination.id) {
-//                R.id.tab_btm_myPage -> supportActionBar?.title =
-//                    getString(R.string.tab_btm_myPage)
-//                R.id.tab_btm_event -> supportActionBar?.title =
-//                    getString(R.string.tab_btm_event)
-//                R.id.tab_btm_search -> supportActionBar?.title =
-//                    getString(R.string.tab_btm_search)
-//            }
-//            Log.d("asd",destination.navigatorName)
-//        }
-
         binding.navBottom.setOnItemSelectedListener { item ->
-            // In order to get the expected behavior, you have to call default Navigation method manually
             when (item.itemId) {
                 R.id.tab_btm_myPage -> supportActionBar?.title =
                     getString(R.string.tab_btm_myPage)
