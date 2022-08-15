@@ -5,10 +5,13 @@ import android.app.Dialog
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ProgressBar
 import androidx.activity.viewModels
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.armysecurity.api.MndAPI
 import com.example.armysecurity.databinding.ActivityMainBinding
@@ -41,8 +44,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.navBottom.setupWithNavController(navController)
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
+//        navController.addOnDestinationChangedListener { _, destination, _ ->
+//            when (destination.id) {
+//                R.id.tab_btm_myPage -> supportActionBar?.title =
+//                    getString(R.string.tab_btm_myPage)
+//                R.id.tab_btm_event -> supportActionBar?.title =
+//                    getString(R.string.tab_btm_event)
+//                R.id.tab_btm_search -> supportActionBar?.title =
+//                    getString(R.string.tab_btm_search)
+//            }
+//            Log.d("asd",destination.navigatorName)
+//        }
+
+        binding.navBottom.setOnItemSelectedListener { item ->
+            // In order to get the expected behavior, you have to call default Navigation method manually
+            when (item.itemId) {
                 R.id.tab_btm_myPage -> supportActionBar?.title =
                     getString(R.string.tab_btm_myPage)
                 R.id.tab_btm_event -> supportActionBar?.title =
@@ -50,6 +66,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.tab_btm_search -> supportActionBar?.title =
                     getString(R.string.tab_btm_search)
             }
+            NavigationUI.onNavDestinationSelected(item, navController)
+            return@setOnItemSelectedListener true
         }
     }
 
@@ -68,4 +86,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        if(navController.backQueue.size >= 4)
+            navController.navigateUp()
+        else
+            super.onBackPressed()
+    }
 }

@@ -9,7 +9,11 @@
         android:id="@+id/tab_btm_event"
         android:name="com.example.armysecurity.ui.EventFragment"
         android:label="fragment_event"
-        tools:layout="@layout/fragment_event" />
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_tab_btm_event_to_guarderFragment"
+            app:destination="@id/guarderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tab_btm_myPage"
         android:name="com.example.armysecurity.ui.MyPageFragment"
@@ -19,5 +23,15 @@
         android:id="@+id/tab_btm_search"
         android:name="com.example.armysecurity.ui.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_tab_btm_search_to_guarderFragment"
+            app:destination="@id/guarderFragment"
+            app:popUpTo="@id/tab_btm_search"/>
+    </fragment>
+    <fragment
+        android:id="@+id/guarderFragment"
+        android:name="com.example.armysecurity.ui.search.GuarderFragment"
+        android:label="fragment_guarder"
+        tools:layout="@layout/fragment_guarder" />
 </navigation>

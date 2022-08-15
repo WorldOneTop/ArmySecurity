@@ -7,25 +7,26 @@
 
     <string name="search">검색</string>
 
-<!--    search fragment-->
+    <!--    search fragment-->
     <string name="search_cemetery_title">현충원</string>
     <string name="search_cemetery_sub_title">국가와 민족을 위해 목숨을 바친 영령들이 안장되어 있는 국립묘지로 서울과 대전에 있다.</string>
     <string name="search_guarder_title">호국영령</string>
     <string name="search_guarder_sub_title">국가의 부름을 받고 전장에 나가 천하보다 귀한 자기 목숨을 바쳐 나라를 지키다 희생된 이들을 말한다.</string>
 
 
-
-<!--    event fragment-->
-    <string name="event_event_title">안보견학 현장체험학습</string>
+    <!--    event fragment-->
+    <string name="event_trip_title">안보견학 현장체험학습</string>
     <string name="event_fly_title">블랙이글스 행사 일정</string>
     <string name="event_war_title">전쟁기념관 정보</string>
 
     <string name="event_pledge_title">국민의례 행사 진행</string>
     <string name="event_sale_title">병사 할인 혜택 정보</string>
 
-    
-<!--    안내 메시지-->
-    <string name="guide_init_download">최초 데이터 로딩중입니다.</string>
 
-<!--    에러 메시지-->
+    <!--    안내 메시지-->
+    <string name="guide_init_download">최초 데이터 로딩중입니다.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    에러 메시지-->
 </resources>
