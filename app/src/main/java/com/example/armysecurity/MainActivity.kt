@@ -10,7 +10,11 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.example.armysecurity.api.MndAPI
 import com.example.armysecurity.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,13 +27,11 @@ class MainActivity : AppCompatActivity() {
 
         initToolbar()
         initNavigation()
-        initNavDrawer()
+
     }
 
     private fun initToolbar(){
         setSupportActionBar(binding.mainToolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24)
     }
 
     private fun initNavigation() {
@@ -37,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 as NavHostFragment).navController
 
         binding.navBottom.setupWithNavController(navController)
-        binding.navDrawer.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
@@ -51,22 +52,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initNavDrawer() {
-
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> binding.mainActivityLayout.openDrawer(GravityCompat.START)
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onBackPressed() {
-        if (binding.mainActivityLayout.isDrawerOpen(binding.navDrawer))
-            binding.mainActivityLayout.closeDrawer(GravityCompat.START)
-        else
-            super.onBackPressed()
-    }
 
 }

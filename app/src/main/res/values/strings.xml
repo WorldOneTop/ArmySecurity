@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ArmySecurity</string>
 
-    <string name="tab_btm_myPage">찜 목록</string>
+    <string name="tab_btm_myPage">북마크</string>
     <string name="tab_btm_search">찾아보기</string>
     <string name="tab_btm_event">참여하기</string>
 
