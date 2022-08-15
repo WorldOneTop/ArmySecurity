@@ -23,4 +23,9 @@
     <string name="event_pledge_title">국민의례 행사 진행</string>
     <string name="event_sale_title">병사 할인 혜택 정보</string>
 
+    
+<!--    안내 메시지-->
+    <string name="guide_init_download">최초 데이터 로딩중입니다.</string>
+
+<!--    에러 메시지-->
 </resources>

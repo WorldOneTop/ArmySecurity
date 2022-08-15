@@ -17,7 +17,7 @@ import retrofit2.http.Path
 
 object MndAPI {
     private const val BASE_URL = "https://openapi.mnd.go.kr/${BuildConfig.MND_API_KEY}/json/"
-
+    const val MAX_VALUE = 65535
     object TYPE{
         const val CEMETERY_1 = "DS_TB_MND_NTNLMMCMT_BURALPRSTS"
         const val CEMETERY_2 = "DS_SEOULMMCMT_GRV_BURALP"

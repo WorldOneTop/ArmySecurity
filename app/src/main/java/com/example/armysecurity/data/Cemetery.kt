@@ -6,7 +6,7 @@ import com.example.armysecurity.api.MndAPI
 import com.google.gson.annotations.SerializedName
 
 @Entity
-data class Cemetery(
+data class Cemetery1(
     @SerializedName("stmt")
     val name:String,
     @SerializedName("rank")
@@ -24,16 +24,35 @@ data class Cemetery(
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
 )
-
-data class ResponseData(
-    @SerializedName(MndAPI.TYPE.CEMETERY_1)
-    val CEMETERY_1:ResponseCemetery,
-    @SerializedName(MndAPI.TYPE.CEMETERY_2)
-    val CEMETERY_2:ResponseCemetery
+@Entity
+data class Cemetery2(
+    @SerializedName("buralpsn_nm")
+    val name:String,
+    @SerializedName("rank")
+    val rank:String, // 계급
+    @SerializedName("sclpst")
+    val identity:String, // 신분
+    @SerializedName("bural_date")
+    val moveDate:String, // 안장 일자
+    @SerializedName("bural_pstn")
+    val movePlc:String, // 안장 위치
+    @SerializedName("death_day")
+    val deathDate:String, // 사망 일자
+    @SerializedName("death_plc")
+    val deathPlc:String, // 사망 장소
+    @PrimaryKey(autoGenerate = true)
+    val id:Int = 0
 )
-data class ResponseCemetery(
+
+data class ResponseCemetery1(
     @SerializedName("list_total_count")
     val count:Int,
     @SerializedName("row")
-    val row:List<Cemetery>
+    val row:List<Cemetery1>,
+)
+data class ResponseCemetery2(
+    @SerializedName("list_total_count")
+    val count:Int,
+    @SerializedName("row")
+    val row:List<Cemetery2>,
 )
