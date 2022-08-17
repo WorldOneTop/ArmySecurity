@@ -47,14 +47,13 @@ class MainVM:ViewModel() {
     }
 
     private suspend fun downloadCemetery(db:AppDB, progressBar: ProgressDialog) = coroutineScope {
-        db.dbDao().deleteCemetery1()
-        db.dbDao().deleteCemetery2()
+        db.dbDao().deleteCemetery()
         val div = 5
         for(i in 0..div){
             launch{
                 val data =MndAPI.request.getCemetery1((MndAPI.MAX_VALUE/div*i), MndAPI.MAX_VALUE/div*(i+1)-1)
                 if(data.error == null){
-                    db.dbDao().insertCemetery1(
+                    db.dbDao().insertCemetery(
                         data.CEMETERY_1.row
                     )
                     withContext(Dispatchers.Main){
@@ -65,8 +64,11 @@ class MainVM:ViewModel() {
             launch{
                 val data = MndAPI.request.getCemetery2((MndAPI.MAX_VALUE/div*i)+1, MndAPI.MAX_VALUE/div*(i+1))
                 if(data.error == null) {
-                    db.dbDao().insertCemetery2(
-                        data.CEMETERY_2.row
+                    val dataCemetery = List(data.CEMETERY_2.row.size){
+                        data.CEMETERY_2.row[it].getChemeter()
+                    }
+                    db.dbDao().insertCemetery(
+                        dataCemetery
                     )
                     withContext(Dispatchers.Main) {
                         progressBar.progress += 30 / 5 / 2

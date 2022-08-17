@@ -13,6 +13,7 @@ class MyPageFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = FragmentMyPageBinding.inflate(layoutInflater)
     }
 
     override fun onCreateView(

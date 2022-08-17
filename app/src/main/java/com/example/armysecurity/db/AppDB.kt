@@ -2,10 +2,11 @@ package com.example.armysecurity.db
 
 import android.content.Context
 import androidx.lifecycle.LiveData
+import androidx.paging.PagingSource
 import androidx.room.*
 import com.example.armysecurity.data.*
 
-@Database(entities = [Cemetery1::class,Cemetery2::class], version = 1)
+@Database(entities = [Cemetery::class], version = 1)
 abstract class AppDB : RoomDatabase() {
     abstract fun dbDao(): DBDao
 
@@ -26,13 +27,28 @@ abstract class AppDB : RoomDatabase() {
 @Dao
 interface DBDao {
     @Insert
-    fun insertCemetery1(users: List<Cemetery1>)
-    @Insert
-    fun insertCemetery2(users: List<Cemetery2>)
+    fun insertCemetery(users: List<Cemetery>)
 
-    @Query("DELETE FROM Cemetery2")
-    suspend fun deleteCemetery2()
-    @Query("DELETE FROM Cemetery1")
-    suspend fun deleteCemetery1()
+    @Query("DELETE FROM Cemetery")
+    suspend fun deleteCemetery()
+
+
+    @Query("SELECT * FROM Cemetery ORDER BY name ASC")
+    fun selectCemetery(): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE name LIKE :value ORDER BY name ASC")
+    fun selectCemeteryName(value:String): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE rank LIKE :value ORDER BY name ASC")
+    fun selectCemeteryRank(value:String): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE identity LIKE :value ORDER BY name ASC")
+    fun selectCemeteryIdentity(value:String): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE moveDate LIKE :value ORDER BY name ASC")
+    fun selectCemeteryMoveDate(value:String): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE movePlc LIKE :value ORDER BY name ASC")
+    fun selectCemeteryMovePlc(value:String): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE deathDate LIKE :value ORDER BY name ASC")
+    fun selectCemeteryDeathDate(value:String): PagingSource<Int, Cemetery>
+    @Query("SELECT * FROM Cemetery WHERE deathPlc LIKE :value ORDER BY name ASC")
+    fun selectCemeteryDeathPlc(value:String): PagingSource<Int, Cemetery>
+
 
 }

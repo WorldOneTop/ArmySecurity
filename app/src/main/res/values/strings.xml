@@ -6,6 +6,9 @@
     <string name="tab_btm_event">참여하기</string>
 
     <string name="search">검색</string>
+    <string name="add">추가</string>
+    <string name="edit">입력</string>
+    <string name="filter">검색 조건</string>
 
     <!--    search fragment-->
     <string name="search_cemetery_title">현충원</string>
@@ -13,6 +16,14 @@
     <string name="search_guarder_title">호국영령</string>
     <string name="search_guarder_sub_title">국가의 부름을 받고 전장에 나가 천하보다 귀한 자기 목숨을 바쳐 나라를 지키다 희생된 이들을 말한다.</string>
 
+    <!--    cemetery fragment-->
+    <string name="cemetery_field_name">안장자 명</string>
+    <string name="cemetery_field_rank">계급</string>
+    <string name="cemetery_field_identity">신분</string>
+    <string name="cemetery_field_move_date">안장 일자</string>
+    <string name="cemetery_field_move_plc">안장 위치</string>
+    <string name="cemetery_field_death_date">순국 일자</string>
+    <string name="cemetery_field_death_plc">순국 장소</string>
 
     <!--    event fragment-->
     <string name="event_trip_title">안보견학 현장체험학습</string>
@@ -29,4 +40,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    에러 메시지-->
+
+    <string-array name="cemetery_field_array">
+        <item>@string/cemetery_field_name</item>
+        <item>@string/cemetery_field_rank</item>
+        <item>@string/cemetery_field_identity</item>
+        <item>@string/cemetery_field_move_date</item>
+        <item>@string/cemetery_field_move_plc</item>
+        <item>@string/cemetery_field_death_date</item>
+        <item>@string/cemetery_field_death_plc</item>
+    </string-array>
 </resources>

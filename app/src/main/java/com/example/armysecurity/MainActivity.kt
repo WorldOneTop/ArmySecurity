@@ -6,6 +6,8 @@ import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
+import android.view.View
 import android.widget.ProgressBar
 import androidx.activity.viewModels
 import androidx.navigation.NavController
@@ -35,7 +37,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initToolbar(){
-        setSupportActionBar(binding.mainToolbar)
+        binding.mainToolbarBack.visibility = View.GONE
+        binding.mainToolbarTitle.text = getString(R.string.tab_btm_myPage)
+        binding.mainToolbarBack.setOnClickListener{
+            onBackPressed()
+        }
     }
 
     private fun initNavigation() {
@@ -46,15 +52,25 @@ class MainActivity : AppCompatActivity() {
 
         binding.navBottom.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.tab_btm_myPage -> supportActionBar?.title =
+                R.id.tab_btm_myPage -> binding.mainToolbarTitle.text =
                     getString(R.string.tab_btm_myPage)
-                R.id.tab_btm_event -> supportActionBar?.title =
+                R.id.tab_btm_event -> binding.mainToolbarTitle.text =
                     getString(R.string.tab_btm_event)
-                R.id.tab_btm_search -> supportActionBar?.title =
+                R.id.tab_btm_search -> binding.mainToolbarTitle.text =
                     getString(R.string.tab_btm_search)
             }
             NavigationUI.onNavDestinationSelected(item, navController)
             return@setOnItemSelectedListener true
+        }
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.tab_btm_myPage
+                || destination.id == R.id.tab_btm_event
+                || destination.id == R.id.tab_btm_search){
+                binding.mainToolbarBack.visibility = View.GONE
+            }else{
+                binding.mainToolbarBack.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -74,9 +90,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(navController.backQueue.size >= 4)
+        if(navController.backQueue.size >= 4) {
             navController.navigateUp()
+            if(navController.backQueue.size < 4)
+                binding.mainToolbarBack.visibility = View.GONE
+        }
         else
             super.onBackPressed()
     }
+
 }

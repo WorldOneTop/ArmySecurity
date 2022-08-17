@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:weightSum="10"
+    android:baselineAligned="false"
+    android:gravity="center_vertical">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filterLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:hint="@string/filter"
+        android:layout_weight="3"
+        android:layout_marginEnd="10dp">
+        <AutoCompleteTextView
+            android:id="@+id/filterText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:inputType="none"
+            android:focusableInTouchMode="false"
+            tools:ignore="LabelFor" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/editLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

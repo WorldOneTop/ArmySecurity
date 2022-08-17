@@ -6,7 +6,7 @@ import com.example.armysecurity.api.MndAPI
 import com.google.gson.annotations.SerializedName
 
 @Entity
-data class Cemetery1(
+data class Cemetery(
     @SerializedName("stmt")
     val name:String,
     @SerializedName("rank")
@@ -24,7 +24,7 @@ data class Cemetery1(
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
 )
-@Entity
+
 data class Cemetery2(
     @SerializedName("buralpsn_nm")
     val name:String,
@@ -42,13 +42,17 @@ data class Cemetery2(
     val deathPlc:String, // 사망 장소
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
-)
+){
+    fun getChemeter() = Cemetery(
+        name,rank,identity,moveDate,movePlc,deathDate,deathPlc
+    )
+}
 
 data class ResponseCemetery1(
     @SerializedName("list_total_count")
     val count:Int,
     @SerializedName("row")
-    val row:List<Cemetery1>,
+    val row:List<Cemetery>,
 )
 data class ResponseCemetery2(
     @SerializedName("list_total_count")
