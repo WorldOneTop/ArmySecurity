@@ -11,11 +11,31 @@
         android:id="@+id/searchField"
         layout="@layout/field_search"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"/>
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" >
+        <Button
+            android:id="@+id/btnSearchDetail"
+            android:text="@string/search_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            tools:ignore="ButtonStyle"/>
+        <Button
+            android:id="@+id/btnSearch"
+            android:text="@string/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
 
     <include
-        layout="@layout/row_cemetery"
+        layout="@layout/row_cemetery_daejeon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <View
@@ -39,6 +59,7 @@
             android:id="@+id/pbCemeteryLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:background="#17000000">
             <ProgressBar
                 android:layout_width="wrap_content"

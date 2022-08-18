@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.search.CemeteryBranchFragment"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingHorizontal="40dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/seoulLayout"
+        style="@style/cardview_small"
+        android:layout_height="170dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
+        <ImageView
+            style="@style/cardview_image"
+            android:contentDescription="@string/cemetery_branch_seoul"
+            android:src="@drawable/img_cemetery_branch_seoul"
+            app:tint="#3a000000"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/textview_card_title"
+            android:layout_margin="0dp"
+            android:text="@string/cemetery_branch_seoul" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/daejeonLayout"
+        style="@style/cardview_small"
+        android:layout_height="170dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
+        <ImageView
+            style="@style/cardview_image"
+            android:contentDescription="@string/cemetery_branch_daejeon"
+            android:src="@drawable/img_cemetery_branch_daejeonpng"
+            app:tint="#3a000000"
+            tools:ignore="MissingConstraints"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/textview_card_title"
+            android:layout_margin="0dp"
+            android:text="@string/cemetery_branch_daejeon" />
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

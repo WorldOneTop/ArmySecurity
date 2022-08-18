@@ -55,4 +55,17 @@
         <item name="layout_constraintEnd_toEndOf">parent</item>
         <item name="tint">@color/white</item>
     </style>
+    <style name="cemetery_detail_title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+    </style>
+    <style name="cemetery_detail_data">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
 </resources>

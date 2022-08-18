@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="data"
+            type="com.example.armysecurity.data.CemeteryDaejeon" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="350dp"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:columnCount="2"
+    android:layout_columnWeight="10"
+    android:useDefaultMargins="true">
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:src="@drawable/ic_baseline_close_24"
+        android:layout_gravity="end"
+        android:contentDescription="@string/close"
+        app:tint="@color/primaryDarkColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:text="@{data.name}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:text="@string/cemetery_field_pname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pname"
+            android:text="@{data.pname1}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:text="@string/cemetery_field_deathday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/deathday"
+            android:text="@{data.deathday}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:text="@string/cemetery_field_sn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sn"
+            android:text="@{data.sn}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:text="@string/cemetery_field_qualification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/qualification"
+            android:text="@{data.qualification}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:text="@string/cemetery_field_burrday"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/burrday"
+            android:text="@{data.burrday}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:text="@string/cemetery_field_graveno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="3"
+        android:gravity="center"/>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="7">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/graveno"
+            android:text="@{data.graveno}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/edit"
+            android:textSize="16sp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="10"
+        android:layout_columnSpan="2"
+        android:gravity="center">
+        <Button
+            android:id="@+id/reset"
+            android:text="@string/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"/>
+        <Button
+            android:id="@+id/search"
+            android:text="@string/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="8dp"/>
+    </LinearLayout>
+
+</GridLayout>
+    </ScrollView>
+</layout>

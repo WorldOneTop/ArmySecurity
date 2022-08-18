@@ -6,24 +6,46 @@
     <string name="tab_btm_event">참여하기</string>
 
     <string name="search">검색</string>
+    <string name="search_detail">상세 검색</string>
     <string name="add">추가</string>
-    <string name="edit">입력</string>
-    <string name="filter">검색 조건</string>
+    <string name="close">닫기</string>
+    <string name="reset">초기화</string>
 
     <!--    search fragment-->
+    <string name="edit">입력</string>
+    <string name="filter">검색 조건</string>
     <string name="search_cemetery_title">현충원</string>
     <string name="search_cemetery_sub_title">국가와 민족을 위해 목숨을 바친 영령들이 안장되어 있는 국립묘지로 서울과 대전에 있다.</string>
     <string name="search_guarder_title">호국영령</string>
     <string name="search_guarder_sub_title">국가의 부름을 받고 전장에 나가 천하보다 귀한 자기 목숨을 바쳐 나라를 지키다 희생된 이들을 말한다.</string>
+    <string name="cemetery_branch_seoul">서울 현충원</string>
+    <string name="cemetery_branch_daejeon">대전 현충원</string>
+
 
     <!--    cemetery fragment-->
+
+
     <string name="cemetery_field_name">안장자 명</string>
     <string name="cemetery_field_rank">계급</string>
     <string name="cemetery_field_identity">신분</string>
-    <string name="cemetery_field_move_date">안장 일자</string>
+    <string name="cemetery_field_move_date">안장 일자\n(dd/mm/yyyy)</string>
     <string name="cemetery_field_move_plc">안장 위치</string>
-    <string name="cemetery_field_death_date">순국 일자</string>
+    <string name="cemetery_field_death_date">순국 일자\n(dd/mm/yyyy)</string>
     <string name="cemetery_field_death_plc">순국 장소</string>
+
+
+    <string name="cemetery_field_birthday">생년월일\n(yyyy-mm-dd)</string>
+    <string name="cemetery_field_deathday">순국 일자\n(yyyy-mm-dd)</string>
+    <string name="cemetery_field_burrday">안장 일자\n(yyyy-mm-dd)</string>
+    <string name="cemetery_field_qualification">안장 자격</string>
+    <string name="cemetery_field_sn">군번</string>
+    <string name="cemetery_field_pname">배우자</string>
+    <string name="cemetery_field_loctype">묘역 타입</string>
+    <string name="cemetery_field_locname">묘역 명</string>
+    <string name="cemetery_field_block">묘역 위치</string>
+    <string name="cemetery_field_detaillocation">상세 위치</string>
+    <string name="cemetery_field_graveno">묘지 번호</string>
+
 
     <!--    event fragment-->
     <string name="event_trip_title">안보견학 현장체험학습</string>
@@ -36,6 +58,8 @@
 
     <!--    안내 메시지-->
     <string name="guide_init_download">최초 데이터 로딩중입니다.</string>
+    <string name="input_cemetery_field_name">안장자 명을 입력해주세요.</string>
+    <string name="empty_search_data">검색 결과에 해당하는 데이터가 없습니다.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -40,8 +40,8 @@
             android:id="@+id/action_tab_btm_search_to_guarderFragment"
             app:destination="@id/guarderFragment"/>
         <action
-            android:id="@+id/action_tab_btm_search_to_cemeteryFragment"
-            app:destination="@id/cemeteryFragment" />
+            android:id="@+id/action_tab_btm_search_to_cemeteryBranchFragment"
+            app:destination="@id/cemeteryBranchFragment" />
     </fragment>
     <fragment
         android:id="@+id/guarderFragment"
@@ -52,7 +52,11 @@
         android:id="@+id/cemeteryFragment"
         android:name="com.example.armysecurity.ui.search.CemeteryFragment"
         android:label="fragment_cemetery"
-        tools:layout="@layout/fragment_cemetery" />
+        tools:layout="@layout/fragment_cemetery" >
+        <action
+            android:id="@+id/action_cemeteryFragment_to_cemeteryDetailFragment"
+            app:destination="@id/cemeteryDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/flyFragment"
         android:name="com.example.armysecurity.ui.event.FlyFragment"
@@ -78,4 +82,28 @@
         android:name="com.example.armysecurity.ui.event.WarFragment"
         android:label="fragment_war"
         tools:layout="@layout/fragment_war" />
+    <fragment
+        android:id="@+id/cemeteryBranchFragment"
+        android:name="com.example.armysecurity.ui.search.CemeteryBranchFragment"
+        android:label="fragment_cemetery_branch"
+        tools:layout="@layout/fragment_cemetery_branch" >
+        <action
+            android:id="@+id/action_cemeteryBranchFragment_to_cemeteryFragment"
+            app:destination="@id/cemeteryFragment" />
+        <action
+            android:id="@+id/action_cemeteryBranchFragment_to_cemeteryDaejeonFragment"
+            app:destination="@id/cemeteryDaejeonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cemeteryDetailFragment"
+        android:name="com.example.armysecurity.ui.search.CemeteryDetailFragment"
+        android:label="CemeteryDetailFragment" />
+    <fragment
+        android:id="@+id/cemeteryDaejeonFragment"
+        android:name="com.example.armysecurity.ui.search.CemeteryDaejeonFragment"
+        android:label="CemeteryDaejeonFragment" >
+        <action
+            android:id="@+id/action_cemeteryDaejeonFragment_to_cemeteryDetailFragment"
+            app:destination="@id/cemeteryDetailFragment" />
+    </fragment>
 </navigation>

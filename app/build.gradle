@@ -20,6 +20,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField "String", "MND_API_KEY", properties['mnd_api_key']
+        buildConfigField "String", "DATA_API_KEY", properties['data_api_key']
+
     }
 
     buildTypes {
@@ -74,4 +76,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
 
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+
+    implementation 'org.parceler:parceler-api:1.1.12'
+    kapt 'org.parceler:parceler:1.1.12'
 }

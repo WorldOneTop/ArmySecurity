@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<data>
+    <variable
+        name="data"
+        type="com.example.armysecurity.data.Cemetery" />
+</data>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.CemeteryDetailFragment"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="20dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/cemetery_field_name"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.name}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_rank"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.rank}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_identity"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.identity}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_move_date"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.moveDate}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_move_plc"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.movePlc}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_death_date"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.deathDate}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+
+    <TextView
+        android:text="@string/cemetery_field_death_plc"
+        style="@style/cemetery_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@{data.deathPlc}"
+        style="@style/cemetery_detail_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primaryLightColor" />
+</LinearLayout>
+</ScrollView>
+</layout>

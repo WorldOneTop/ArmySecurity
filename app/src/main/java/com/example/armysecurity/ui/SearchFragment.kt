@@ -25,7 +25,7 @@ class SearchFragment : Fragment() {
             findNavController().navigate(R.id.action_tab_btm_search_to_guarderFragment)
         }
         binding.cemeteryLayout.setOnClickListener{
-            findNavController().navigate(R.id.action_tab_btm_search_to_cemeteryFragment)
+            findNavController().navigate(R.id.action_tab_btm_search_to_cemeteryBranchFragment)
         }
 
         return binding.root

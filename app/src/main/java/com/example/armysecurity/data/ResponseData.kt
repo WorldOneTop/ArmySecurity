@@ -18,3 +18,16 @@ data class ResponseError(
     @SerializedName("MESSAGE")
     val message:String
 )
+
+data class ResponseCemetery1(
+    @SerializedName("list_total_count")
+    val count:Int,
+    @SerializedName("row")
+    val row:List<Cemetery>,
+)
+data class ResponseCemetery2(
+    @SerializedName("list_total_count")
+    val count:Int,
+    @SerializedName("row")
+    val row:List<Cemetery2>,
+)
