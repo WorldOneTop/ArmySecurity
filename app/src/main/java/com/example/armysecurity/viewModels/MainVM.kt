@@ -28,8 +28,8 @@ class MainVM:ViewModel() {
             }else if(to==1){
                 withContext(Dispatchers.Main){
                     progressBar.progress = 50
-                    initRelics(db,prefrnc,progressBar)
                 }
+                initRelics(db,prefrnc,progressBar)
             }
             withContext(Dispatchers.Main){
                 progressBar.dismiss()
@@ -55,7 +55,7 @@ class MainVM:ViewModel() {
                         data.CEMETERY_1.row
                     )
                     withContext(Dispatchers.Main){
-                        progressBar.progress += 45/5/2 // init 3개중에 하나, 5번반복, Cemetery 두개 중 하나
+                        progressBar.progress += 45/div/2 // init 3개중에 하나, 5번반복, Cemetery 두개 중 하나
                     }
                 }
             }
@@ -69,20 +69,25 @@ class MainVM:ViewModel() {
                         dataCemetery
                     )
                     withContext(Dispatchers.Main) {
-                        progressBar.progress += 45 / 5 / 2
+                        progressBar.progress += 45 / div / 2
                     }
                 }
             }
         }
     }
-    private suspend fun downloadRelics(db:AppDB, progressBar: ProgressDialog){
-        CoroutineScope(Dispatchers.IO).launch{
+    private suspend fun downloadRelics(db:AppDB, progressBar: ProgressDialog) = coroutineScope{
+        launch {
             db.dbDao().deleteRelics()
             db.dbDao().insertRelics(
                 GithubAPI.request.getRelics().relics!!
             )
-            withContext(Dispatchers.Main){
-                progressBar.progress += 45/5
+        }
+        launch {
+            for(i in 0..div){
+                delay(350)
+                withContext(Dispatchers.Main){
+                    progressBar.progress += 45/div
+                }
             }
         }
     }
