@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 
+
 object GithubAPI {
     private const val BASE_URL = "https://raw.githubusercontent.com/WorldOneTop/ArmySecurityFile/main/"
     const val FILE_RELICS = "relics"

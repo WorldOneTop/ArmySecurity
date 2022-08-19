@@ -59,7 +59,7 @@ class MainVM:ViewModel() {
         db.dbDao().deleteCemetery()
         for(i in 0..div){
             launch{
-                val data =MndAPI.request.getCemetery1((MndAPI.MAX_VALUE/div*i), MndAPI.MAX_VALUE/div*(i+1)-1)
+                val data =MndAPI.request.getData(MndAPI.TYPE.CEMETERY_1,(MndAPI.MAX_VALUE/div*i), MndAPI.MAX_VALUE/div*(i+1)-1)
                 if(data.error == null){
                     db.dbDao().insertCemetery(
                         data.CEMETERY_1.row
@@ -70,7 +70,7 @@ class MainVM:ViewModel() {
                 }
             }
             launch{
-                val data = MndAPI.request.getCemetery2((MndAPI.MAX_VALUE/div*i)+1, MndAPI.MAX_VALUE/div*(i+1))
+                val data = MndAPI.request.getData(MndAPI.TYPE.CEMETERY_2,(MndAPI.MAX_VALUE/div*i)+1, MndAPI.MAX_VALUE/div*(i+1))
                 if(data.error == null) {
                     val dataCemetery = List(data.CEMETERY_2.row.size){
                         data.CEMETERY_2.row[it].getChemeter()
@@ -102,15 +102,15 @@ class MainVM:ViewModel() {
         }
     }
     private suspend fun downloadSale(db:AppDB, progressBar: ProgressDialog) = coroutineScope{
-        db.dbDao().insertSale(MndAPI.request.getSale(1,65535).SALE.row)
+        db.dbDao().insertSale(MndAPI.request.getData(MndAPI.TYPE.SALE, 1,65535).SALE.row)
         withContext(Dispatchers.Main){
             progressBar.progress += 10
         }
     }
     private suspend fun initPrefrncCemetery(prefrnc: SharedPreferences, progressBar: ProgressDialog){
         prefrnc.edit()
-            .putInt(MndAPI.TYPE.CEMETERY_1, MndAPI.request.getCemetery1(1,1).CEMETERY_1.count)
-            .putInt(MndAPI.TYPE.CEMETERY_2, MndAPI.request.getCemetery2(1,1).CEMETERY_2.count)
+            .putInt(MndAPI.TYPE.CEMETERY_1, MndAPI.request.getData(MndAPI.TYPE.CEMETERY_1,1,1).CEMETERY_1.count)
+            .putInt(MndAPI.TYPE.CEMETERY_2, MndAPI.request.getData(MndAPI.TYPE.CEMETERY_2,1,1).CEMETERY_2.count)
             .apply()
 
         progressBar.progress += 5
@@ -124,7 +124,7 @@ class MainVM:ViewModel() {
     }
     private suspend fun initPrefrncSale(prefrnc: SharedPreferences, progressBar: ProgressDialog){
         prefrnc.edit()
-            .putInt(MndAPI.TYPE.SALE, MndAPI.request.getSale(1,1).SALE.count)
+            .putInt(MndAPI.TYPE.SALE, MndAPI.request.getData(MndAPI.TYPE.SALE,1,1).SALE.count)
             .apply()
 
         progressBar.progress += 5
