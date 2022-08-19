@@ -7,12 +7,14 @@ import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import android.widget.ProgressBar
+import com.example.armysecurity.api.GithubAPI
 import com.example.armysecurity.api.MndAPI
 import com.example.armysecurity.db.AppDB
 import com.example.armysecurity.db.PreFrncManager
 import kotlinx.coroutines.*
 
 class MainVM:ViewModel() {
+    val div = 5
 
 
     fun initDownload(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog,to:Int = 0){
@@ -21,19 +23,13 @@ class MainVM:ViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             if(to==0){
                 initCemetery(db,prefrnc,progressBar)
-
+                initRelics(db,prefrnc,progressBar)
 
             }else if(to==1){
                 withContext(Dispatchers.Main){
-                    progressBar.progress = 33
+                    progressBar.progress = 50
+                    initRelics(db,prefrnc,progressBar)
                 }
-
-
-            }else if(to==2){
-                withContext(Dispatchers.Main){
-                    progressBar.progress = 66
-                }
-
             }
             withContext(Dispatchers.Main){
                 progressBar.dismiss()
@@ -43,12 +39,14 @@ class MainVM:ViewModel() {
     private suspend fun initCemetery(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog) = coroutineScope{
         downloadCemetery(db,progressBar)
         initPrefrncCemetery(prefrnc,progressBar)
-
+    }
+    private suspend fun initRelics(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog) = coroutineScope{
+        downloadRelics(db,progressBar)
+        initPrefrncRelics(prefrnc,progressBar)
     }
 
     private suspend fun downloadCemetery(db:AppDB, progressBar: ProgressDialog) = coroutineScope {
         db.dbDao().deleteCemetery()
-        val div = 5
         for(i in 0..div){
             launch{
                 val data =MndAPI.request.getCemetery1((MndAPI.MAX_VALUE/div*i), MndAPI.MAX_VALUE/div*(i+1)-1)
@@ -57,7 +55,7 @@ class MainVM:ViewModel() {
                         data.CEMETERY_1.row
                     )
                     withContext(Dispatchers.Main){
-                        progressBar.progress += 30/5/2 // init 3개중에 하나, 5번반복, Cemetery 두개 중 하나
+                        progressBar.progress += 45/5/2 // init 3개중에 하나, 5번반복, Cemetery 두개 중 하나
                     }
                 }
             }
@@ -71,9 +69,20 @@ class MainVM:ViewModel() {
                         dataCemetery
                     )
                     withContext(Dispatchers.Main) {
-                        progressBar.progress += 30 / 5 / 2
+                        progressBar.progress += 45 / 5 / 2
                     }
                 }
+            }
+        }
+    }
+    private suspend fun downloadRelics(db:AppDB, progressBar: ProgressDialog){
+        CoroutineScope(Dispatchers.IO).launch{
+            db.dbDao().deleteRelics()
+            db.dbDao().insertRelics(
+                GithubAPI.request.getRelics().relics!!
+            )
+            withContext(Dispatchers.Main){
+                progressBar.progress += 45/5
             }
         }
     }
@@ -83,7 +92,14 @@ class MainVM:ViewModel() {
             .putInt(MndAPI.TYPE.CEMETERY_2, MndAPI.request.getCemetery2(1,1).CEMETERY_2.count)
             .apply()
 
-        progressBar.progress += 3
+        progressBar.progress += 5
+    }
+    private suspend fun initPrefrncRelics(prefrnc: SharedPreferences, progressBar: ProgressDialog){
+        prefrnc.edit()
+            .putInt("relicsCount", GithubAPI.request.getVersion().relicsCount!!)
+            .apply()
+
+        progressBar.progress += 5
     }
 
 }

@@ -3,12 +3,10 @@ package com.example.armysecurity.data
 import com.google.gson.annotations.SerializedName
 
 data class ResponseGithub (
-    @SerializedName("relicsVersion")
-    val relicsVersion:Int,
-    @SerializedName("flyVersion")
-    val flyVersion:Int,
+    @SerializedName("relicsCount")
+    val relicsCount:Int?,
     @SerializedName("data")
-    val relics: List<Relics>,
+    val relics: List<Relics>?,
     @SerializedName("flyData")
-    val fly: List<Fly>
+    val fly: List<Fly>?
 )

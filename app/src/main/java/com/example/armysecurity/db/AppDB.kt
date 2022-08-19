@@ -6,7 +6,7 @@ import androidx.paging.PagingSource
 import androidx.room.*
 import com.example.armysecurity.data.*
 
-@Database(entities = [Cemetery::class], version = 1)
+@Database(entities = [Cemetery::class,Relics::class], version = 1)
 abstract class AppDB : RoomDatabase() {
     abstract fun dbDao(): DBDao
 
@@ -49,6 +49,12 @@ interface DBDao {
     fun selectCemeteryDeathDate(value:String): PagingSource<Int, Cemetery>
     @Query("SELECT * FROM Cemetery WHERE deathPlc LIKE :value ORDER BY name ASC")
     fun selectCemeteryDeathPlc(value:String): PagingSource<Int, Cemetery>
+
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertRelics(data: List<Relics>)
+    @Query("DELETE FROM Relics")
+    suspend fun deleteRelics()
 
 
 }

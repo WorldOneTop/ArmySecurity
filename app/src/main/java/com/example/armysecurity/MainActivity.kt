@@ -84,8 +84,9 @@ class MainActivity : AppCompatActivity() {
             || PreFrncManager.getInt(applicationContext,MndAPI.TYPE.CEMETERY_2) == PreFrncManager.DEFAULT_VALUE_INT){
             progressBar.show()
             viewModel.initDownload(AppDB.getInstance(applicationContext),PreFrncManager.getPreferences(applicationContext),progressBar)
-        }else if(false){
-
+        }else if(PreFrncManager.getInt(applicationContext,"relicsCount") == PreFrncManager.DEFAULT_VALUE_INT){
+            progressBar.show()
+            viewModel.initDownload(AppDB.getInstance(applicationContext),PreFrncManager.getPreferences(applicationContext),progressBar, to=1)
         }
     }
 
