@@ -6,7 +6,7 @@ import androidx.paging.PagingSource
 import androidx.room.*
 import com.example.armysecurity.data.*
 
-@Database(entities = [Cemetery::class,Relics::class, Sale::class], version = 1)
+@Database(entities = [Cemetery::class,Relics::class, Sale::class, War::class, WarMan::class], version = 1)
 abstract class AppDB : RoomDatabase() {
     abstract fun dbDao(): DBDao
 
@@ -61,4 +61,14 @@ interface DBDao {
     fun insertSale(data: List<Sale>)
     @Query("DELETE FROM Sale")
     suspend fun deleteSale()
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertWar(data: List<War>)
+    @Query("DELETE FROM War")
+    suspend fun deleteWar()
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertWarMan(data: List<WarMan>)
+    @Query("DELETE FROM WarMan")
+    suspend fun deleteWarMan()
 }

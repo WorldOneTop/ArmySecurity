@@ -24,18 +24,18 @@ class MainVM:ViewModel() {
             if(to==0){
                 initCemetery(db,prefrnc,progressBar)
                 initRelics(db,prefrnc,progressBar)
-                initSale(db,prefrnc,progressBar)
+                initEtc(db,prefrnc,progressBar)
             }else if(to==1){
                 withContext(Dispatchers.Main){
-                    progressBar.progress = 50
+                    progressBar.progress = 40
                 }
                 initRelics(db,prefrnc,progressBar)
-                initSale(db,prefrnc,progressBar)
+                initEtc(db,prefrnc,progressBar)
             }else if(to==2){
                 withContext(Dispatchers.Main){
-                    progressBar.progress = 85
+                    progressBar.progress = 70
                 }
-                initSale(db,prefrnc,progressBar)
+                initEtc(db,prefrnc,progressBar)
             }
             withContext(Dispatchers.Main){
                 progressBar.dismiss()
@@ -50,9 +50,8 @@ class MainVM:ViewModel() {
         downloadRelics(db,progressBar)
         initPrefrncRelics(prefrnc,progressBar)
     }
-    private suspend fun initSale(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog) = coroutineScope{
-        downloadSale(db,progressBar)
-        initPrefrncSale(prefrnc,progressBar)
+    private suspend fun initEtc(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog) = coroutineScope{
+        downloadEtc(db,progressBar, prefrnc)
     }
 
     private suspend fun downloadCemetery(db:AppDB, progressBar: ProgressDialog) = coroutineScope {
@@ -65,7 +64,7 @@ class MainVM:ViewModel() {
                         data.CEMETERY_1.row
                     )
                     withContext(Dispatchers.Main){
-                        progressBar.progress += 45/div/2 // init 3개중에 하나, 5번반복, Cemetery 두개 중 하나
+                        progressBar.progress += 35/div/2 // init 3개중에 하나, 5번반복, Cemetery 두개 중 하나
                     }
                 }
             }
@@ -79,7 +78,7 @@ class MainVM:ViewModel() {
                         dataCemetery
                     )
                     withContext(Dispatchers.Main) {
-                        progressBar.progress += 45 / div / 2
+                        progressBar.progress += 35 / div / 2
                     }
                 }
             }
@@ -96,15 +95,37 @@ class MainVM:ViewModel() {
             for(i in 0..div){
                 delay(350)
                 withContext(Dispatchers.Main){
-                    progressBar.progress += 30/div
+                    progressBar.progress += 25/div
                 }
             }
         }
     }
-    private suspend fun downloadSale(db:AppDB, progressBar: ProgressDialog) = coroutineScope{
-        db.dbDao().insertSale(MndAPI.request.getData(MndAPI.TYPE.SALE, 1,65535).SALE.row)
-        withContext(Dispatchers.Main){
-            progressBar.progress += 10
+    private suspend fun downloadEtc(db:AppDB, progressBar: ProgressDialog, prefrnc: SharedPreferences) = coroutineScope {
+        launch { //sale
+            db.dbDao().deleteSale()
+            db.dbDao().insertSale(MndAPI.request.getData(MndAPI.TYPE.SALE, 1,65535).SALE.row)
+            withContext(Dispatchers.Main){
+                progressBar.progress += 8
+            }
+            initPrefrncSale(prefrnc,progressBar)
+        }
+        launch { //war
+            db.dbDao().deleteWar()
+            db.dbDao().insertWar(MndAPI.request.getData(MndAPI.TYPE.WAR, 1,65535).WAR.row)
+            db.dbDao().insertWar(MndAPI.request.getData(MndAPI.TYPE.WAR_2, 1,65535).WAR_2.row)
+            withContext(Dispatchers.Main){
+                progressBar.progress += 8
+            }
+            initPrefrncWar(prefrnc,progressBar)
+        }
+        launch { //war man
+            db.dbDao().deleteWarMan()
+            db.dbDao().insertWarMan(MndAPI.request.getData(MndAPI.TYPE.WARMAN, 1,65535).WARMAN.row)
+            db.dbDao().insertWarMan(MndAPI.request.getData(MndAPI.TYPE.WARMAN_2, 1,65535).WARMAN_2.row)
+            withContext(Dispatchers.Main){
+                progressBar.progress += 8
+            }
+            initPrefrncWarMan(prefrnc,progressBar)
         }
     }
     private suspend fun initPrefrncCemetery(prefrnc: SharedPreferences, progressBar: ProgressDialog){
@@ -126,8 +147,21 @@ class MainVM:ViewModel() {
         prefrnc.edit()
             .putInt(MndAPI.TYPE.SALE, MndAPI.request.getData(MndAPI.TYPE.SALE,1,1).SALE.count)
             .apply()
-
-        progressBar.progress += 5
+        progressBar.progress += 2
+    }
+    private suspend fun initPrefrncWar(prefrnc: SharedPreferences, progressBar: ProgressDialog){
+        prefrnc.edit()
+            .putInt(MndAPI.TYPE.WAR, MndAPI.request.getData(MndAPI.TYPE.WAR,1,1).WAR.count)
+            .putInt(MndAPI.TYPE.WAR_2, MndAPI.request.getData(MndAPI.TYPE.WAR_2,1,1).WAR_2.count)
+            .apply()
+        progressBar.progress += 2
+    }
+    private suspend fun initPrefrncWarMan(prefrnc: SharedPreferences, progressBar: ProgressDialog){
+        prefrnc.edit()
+            .putInt(MndAPI.TYPE.WARMAN, MndAPI.request.getData(MndAPI.TYPE.WARMAN,1,1).WARMAN.count)
+            .putInt(MndAPI.TYPE.WARMAN_2, MndAPI.request.getData(MndAPI.TYPE.WARMAN_2,1,1).WARMAN_2.count)
+            .apply()
+        progressBar.progress += 2
     }
 
 }
