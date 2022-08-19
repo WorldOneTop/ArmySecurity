@@ -64,7 +64,7 @@
     <string name="war_field_order">지휘관</string>
     <string name="war_field_born">출생지</string>
     <string name="war_field_rank">계급</string>
-    <string name="war_field_award">상훈내역</string>
+    <string name="war_field_award">상훈 내역</string>
 
     <string name="war_field_relics_name">명칭</string>
     <string name="war_field_relics_place">국적</string>
@@ -72,7 +72,7 @@
     <string name="war_field_obtm">입수처</string>
     <string name="war_field_relafr">관련 사건</string>
     <string name="war_field_chrtrst">특징</string>
-    <string name="war_field_wrtmyn">전시 여부</string>
+    <string name="war_field_wrtmyn">전시 여부\n(Y/N)</string>
 
 
     <!--    Trip Fragment-->
@@ -109,7 +109,30 @@
     <string-array name="war_tab">
         <item>전쟁 기념관</item>
         <item>유물 목록</item>
-        <item>전쟁 영웅</item>
         <item>전쟁 정보</item>
+        <item>전쟁 영웅</item>
+        <item>찾아오는 길</item>
     </string-array>
+
+
+    <!--    war feild-->
+    <string-array name="war_field_array">
+        <item>@string/war_field_war_name</item>
+        <item>@string/war_field_place</item>
+        <item>@string/war_field_order</item>
+    </string-array>
+    <string-array name="warman_field_array">
+        <item>@string/war_field_name</item>
+        <item>@string/war_field_born</item>
+        <item>@string/war_field_rank</item>
+        <item>@string/war_field_award</item>
+    </string-array>
+    <string-array name="relics_field_array">
+        <item>@string/war_field_relics_name</item>
+        <item>@string/war_field_relics_place</item>
+        <item>@string/war_field_obtm</item>
+        <item>@string/war_field_relafr</item>
+        <item>@string/war_field_wrtmyn</item>
+    </string-array>
+
 </resources>

@@ -1,12 +1,16 @@
 package com.example.armysecurity.data
 
+import androidx.annotation.Keep
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import org.parceler.Parcel
+import org.parceler.ParcelConstructor
 
-// 625전쟁영웅
+@Keep
+@Parcel(Parcel.Serialization.BEAN)
 @Entity
-data class WarMan (
+data class WarMan @ParcelConstructor constructor(
     @SerializedName("title") // 이름
     val title:String,
     @SerializedName("ctnt") // 내용
@@ -21,4 +25,6 @@ data class WarMan (
     val award:String?,
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
-)
+){
+    fun brToN() = content.replace("<br/>", "\n")
+}

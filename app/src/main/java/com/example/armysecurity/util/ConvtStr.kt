@@ -1,4 +1,7 @@
 package com.example.armysecurity.util
 
-class ConvtStr {
+object ConvtStr {
+    fun brToN(){
+
+    }
 }

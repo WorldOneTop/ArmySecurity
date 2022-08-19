@@ -28,10 +28,8 @@ abstract class AppDB : RoomDatabase() {
 interface DBDao {
     @Insert
     fun insertCemetery(users: List<Cemetery>)
-
     @Query("DELETE FROM Cemetery")
     suspend fun deleteCemetery()
-
 
     @Query("SELECT * FROM Cemetery ORDER BY name ASC")
     fun selectCemetery(): PagingSource<Int, Cemetery>
@@ -55,6 +53,20 @@ interface DBDao {
     fun insertRelics(data: List<Relics>)
     @Query("DELETE FROM Relics")
     suspend fun deleteRelics()
+    @Query("SELECT * FROM Relics ORDER BY ttl ASC")
+    fun selectRelics(): PagingSource<Int, Relics>
+    @Query("SELECT * FROM Relics WHERE ttl LIKE :value ORDER BY ttl ASC")
+    fun selectRelicsTtl(value: String): PagingSource<Int, Relics>
+    @Query("SELECT * FROM Relics WHERE natlthourperiod_1_ttl_1 LIKE :value ORDER BY ttl ASC")
+    fun selectRelicsPlace(value: String): PagingSource<Int, Relics>
+    @Query("SELECT * FROM Relics WHERE obtmplace LIKE :value ORDER BY ttl ASC")
+    fun selectRelicsObtmPlc(value: String): PagingSource<Int, Relics>
+    @Query("SELECT * FROM Relics WHERE relafr LIKE :value ORDER BY ttl ASC")
+    fun selectRelicsRelafr(value: String): PagingSource<Int, Relics>
+    @Query("SELECT * FROM Relics WHERE wrtmyn LIKE :value ORDER BY ttl ASC")
+    fun selectRelicsWrtmyn(value: String): PagingSource<Int, Relics>
+
+
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -66,9 +78,28 @@ interface DBDao {
     fun insertWar(data: List<War>)
     @Query("DELETE FROM War")
     suspend fun deleteWar()
+    @Query("SELECT * FROM War ORDER BY title ASC")
+    fun selectWar(): PagingSource<Int, War>
+    @Query("SELECT * FROM War WHERE title LIKE :value ORDER BY title ASC")
+    fun selectWarName(value: String): PagingSource<Int, War>
+    @Query("SELECT * FROM War WHERE place LIKE :value ORDER BY title ASC")
+    fun selectWarPlace(value: String): PagingSource<Int, War>
+    @Query("SELECT * FROM War WHERE man LIKE :value ORDER BY title ASC")
+    fun selectWarOrder(value: String): PagingSource<Int, War>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertWarMan(data: List<WarMan>)
     @Query("DELETE FROM WarMan")
     suspend fun deleteWarMan()
+    @Query("SELECT * FROM WarMan ORDER BY title ASC")
+    fun selectWarMan(): PagingSource<Int, WarMan>
+    @Query("SELECT * FROM WarMan WHERE title LIKE :value ORDER BY title ASC")
+    fun selectWarManName(value: String): PagingSource<Int, WarMan>
+    @Query("SELECT * FROM WarMan WHERE born LIKE :value ORDER BY title ASC")
+    fun selectWarManPlace(value: String): PagingSource<Int, WarMan>
+    @Query("SELECT * FROM WarMan WHERE rank LIKE :value ORDER BY title ASC")
+    fun selectWarManRank(value: String): PagingSource<Int, WarMan>
+    @Query("SELECT * FROM WarMan WHERE award LIKE :value ORDER BY title ASC")
+    fun selectWarManAward(value: String): PagingSource<Int, WarMan>
+
 }

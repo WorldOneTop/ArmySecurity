@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="relics"
+            type="com.example.armysecurity.data.Relics" />
+        <variable
+            name="war"
+            type="com.example.armysecurity.data.War" />
+        <variable
+            name="warMan"
+            type="com.example.armysecurity.data.WarMan" />
+    </data>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.search.CemeteryDetailFragment"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/relicsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="@string/war_field_relics_name"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.ttl}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_relics_place"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.natlthourperiod_1_ttl_1}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_rgmn"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.rgmn}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_obtm"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.obtmplace}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_relafr"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.relafr}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_chrtrst"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.chrtrst}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_wrtmyn"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{relics.wrtmyn}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/WarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="@string/war_field_war_name"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{war.title}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_date"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{war.time}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_place"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{war.place}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_order"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{war.man}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_content"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{war.brToN()}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/WarManLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="@string/war_field_name"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{warMan.title}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_award"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{warMan.award}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_rgmn"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{warMan.date}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_born"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{warMan.born}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_rank"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{warMan.rank}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/war_field_content"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{warMan.brToN()}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>
