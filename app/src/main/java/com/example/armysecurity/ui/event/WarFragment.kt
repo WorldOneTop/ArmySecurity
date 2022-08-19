@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.armysecurity.R
 import com.example.armysecurity.databinding.FragmentWarBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class WarFragment : Fragment() {
@@ -21,7 +22,12 @@ class WarFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
+
+        binding.pagerWar.adapter = activity?.let { WarPagerAdapter(it.supportFragmentManager, lifecycle) }
+
+        TabLayoutMediator(binding.tabWar, binding.pagerWar) { tab, position ->
+            tab.text = resources.getStringArray(R.array.war_tab)[position]
+        }.attach()
         return binding.root
     }
 

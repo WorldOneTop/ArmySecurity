@@ -55,7 +55,7 @@
     <string name="event_pledge_title">국민의례 행사 진행</string>
     <string name="event_sale_title">병사 할인 혜택 정보</string>
 
-<!--    WarFragment-->
+    <!--    WarFragment-->
     <string name="war_field_name">이름</string>
     <string name="war_field_war_name">전투 명</string>
     <string name="war_field_content">내용</string>
@@ -75,19 +75,17 @@
     <string name="war_field_wrtmyn">전시 여부</string>
 
 
-
     <!--    Trip Fragment-->
     <string name="trip_field_name">프로그램 명</string>
     <string name="trip_field_prps">목적</string>
     <string name="trip_field_methd">참여 방법</string>
     <string name="trip_field_guide">안내</string>
 
-<!--    Fly Fragment-->
+    <!--    Fly Fragment-->
     <string name="fly_field_name">행사 명</string>
     <string name="fly_field_date">행사 시기</string>
     <string name="fly_field_place">행사 장소</string>
     <string name="fly_field_page">홈페이지</string>
-
 
 
     <!--    안내 메시지-->
@@ -107,5 +105,11 @@
         <item>@string/cemetery_field_move_plc</item>
         <item>@string/cemetery_field_death_date</item>
         <item>@string/cemetery_field_death_plc</item>
+    </string-array>
+    <string-array name="war_tab">
+        <item>전쟁 기념관</item>
+        <item>유물 목록</item>
+        <item>전쟁 영웅</item>
+        <item>전쟁 정보</item>
     </string-array>
 </resources>
