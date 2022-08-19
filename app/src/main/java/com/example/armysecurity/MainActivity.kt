@@ -87,6 +87,9 @@ class MainActivity : AppCompatActivity() {
         }else if(PreFrncManager.getInt(applicationContext,"relicsCount") == PreFrncManager.DEFAULT_VALUE_INT){
             progressBar.show()
             viewModel.initDownload(AppDB.getInstance(applicationContext),PreFrncManager.getPreferences(applicationContext),progressBar, to=1)
+        }else if(PreFrncManager.getInt(applicationContext,MndAPI.TYPE.SALE) == PreFrncManager.DEFAULT_VALUE_INT){
+            progressBar.show()
+            viewModel.initDownload(AppDB.getInstance(applicationContext),PreFrncManager.getPreferences(applicationContext),progressBar, to=2)
         }
     }
 

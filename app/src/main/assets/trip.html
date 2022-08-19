@@ -1,0 +1,211 @@
+<html>
+<head>
+<style>
+* {margin:0;padding:0;}
+html,body{width:100%:height:100%;}
+*html {overflow-y:scroll; overflow-x:hidden;}
+
+ul, li {list-style:none;}
+img {border:0;vertical-align:top;}
+
+body,td,select,div,form,textarea,center,option,pre,blockquote,tt
+{
+    font-size:10pt; font-family: '굴림체','굴림', Verdana, Helvetica, Arial, Sans-Serif;
+    color:#333333; line-height:1.5;
+
+		scrollbar-face-color: F2F2F2;
+		scrollbar-shadow-color:8D8D8D; 
+		scrollbar-highlight-color: 8D8D8D;
+		scrollbar-3dlight-color: #FFFFFF; 
+		scrollbar-darkshadow-color: #FFFFFF;      
+		scrollbar-track-color: F2F2F2;
+		scrollbar-arrow-color: 8D8D8D;
+		scrollbar-base-color:E9E8E8;}
+
+a:link    {color:#333333;text-decoration:none;font-size:10pt; font-family: '맑은 고딕','굴림', Verdana,  Arial, Helvetica, sans-serif;}
+a:visited {color:#333333;text-decoration:none;font-size:10pt; font-family: '맑은 고딕','굴림', Verdana,  Arial, Helvetica, sans-serif;}
+a:active  {color:#333333;text-decoration:none;font-size:10pt; font-family: '맑은 고딕','굴림', Verdana, Arial, Helvetica, sans-serif;}
+a:hover  {color:#888888;text-decoration:none;font-size:10pt; font-family: '맑은 고딕','굴림', Verdana, Arial, Helvetica, sans-serif;}
+
+
+
+#wrap {position:relative;overflow:visible;width:100%;height:100%;min-height:100%;background-color:#fff;color:#fff;}
+
+
+/* 서브화면 */
+
+.subTop {position:relative;margin:0 auto;width:1122px;height:214px;z-index:10;}
+.subTop .subLogo {position:relative;width:958px;height:214px;left:94px;}
+.subTop .subHome {float:left;position:relative;}
+.subTop .subText {float:left;position:relative;width:900px;height:150px;vertical-align:bottom;}
+.subTop ul {display:block;margin:0;height:28px;text-align:right;margin-right:100px;padding:2px;}
+.subTop ul li {display:inline;}
+
+.subCon {position:relative;width:1122px;min-height:520px;height:auto !important;height:520px;margin:0 auto;background:url('../images/left_menu_bg.jpg') repeat-y;}
+.subMenu {float:left;position:relative;width:194px;left:90px;}
+.subMain {float:left;position:relative;left:110px;width:680px;padding:25px;}
+
+.copyright {position:relative;width:100%;height:29px;background-color:#858585;text-align:center;}
+
+.conBg {position:absolute;width:100%;height:266px;background:#c3c3c3;top:202px;}
+.subBg {position:absolute;width:100%;height:153px;background:#c3c3c3;top:64px;}
+.dotline {clear:both;position:relative;width:100%;height:2px;font-size:2px;line-height:2px;background:url('../images/dotline.jpg') repeat-x;}
+
+.content {margin:0 auto;width:570px;padding:10px;}
+
+.content ul {padding-left:10px;}
+.content li {list-style:disc; font-weight:bold;font-size:11pt;}
+.content style {font-weight:normal;}
+.content .inner {padding-left:10px;}
+.content .inner1 {padding-left:30px;}
+.content .inner li {list-style:circle;font-weight:normal;font-size:10pt;}
+.content .inner1 li {list-style:circle;font-weight:normal;font-size:10pt;}
+
+.font_strong01 {font-weight: bold; text-align:center; }
+.te_l {text-align:left; }
+.te_ll {}
+
+
+/* 테이블 스타일정의 */
+
+.table_body {clear:both;border-collapse: collapse; }
+.table_body table { width: 100%; font-size:1em; font-weight:normal; text-align:center; border-collapse: collapse;}
+.table_body table.line {  border-top: 2px solid #6183a7; width: 100%; font-size:1em; font-weight:normal; text-align:center; border-collapse: collapse;}
+
+/* 칼럼 나누기 */
+
+.table_body thead { margin: 0; padding: 0; border-collapse: collapse;}
+.table_body thead tr { margin: 0; padding: 0;}
+.table_body thead tr th { line-height:1.6em; margin: 0; padding: 0.2em 0 0 0; text-align:center; font-weight: bold; color:#24417B; border: solid 1px #9FB4D9; background:#C5DCF5; }
+.table_body tfoot tr th a { margin: 0 ; padding: 0; color:#717171; text-decoration: none;}
+.table_body tfoot tr th a:hover { margin: 0; padding: 0; color:#ce4e08; }
+
+
+.table_body tbody { margin: 0; padding: 0; }
+.table_body tbody tr { margin: 0; padding: 0; background-color:#ffffff; text-align:center;}
+.table_body tbody tr td { margin: 0; padding: 0.4em 0 0 0.4em; line-height:1.5em; border:1px solid #9FB4D9; }
+.table_body tbody tr td ul li  {list-style:none; }
+.table_body tbody tr td a { color:#444444; text-decoration: none; }
+.table_body tbody tr td a:hover { color:#ce4e08; }
+
+
+/*security/index.jsp*/
+.sec-map{
+	position: relative;		
+	height: 585px;
+	width: 724px;
+	margin: 20px 0 0 0;
+	*margin: 0;
+}
+	.sec-map img{		
+		display: block;
+		margin: 0 auto;
+	}
+	.sec-map button{		
+		position: absolute;
+		display: block;
+		cursor: pointer;
+		opacity: 0;
+		-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+	}
+		.sec-map .sec-1{
+			width: 111px;
+			height: 27px;
+			top: 233px;
+			left: 125px;
+		}
+		.sec-map .sec-2{
+			width: 90px;
+			height: 25px;
+			top: 156px;
+			left: 317px;
+		}
+		.sec-map .sec-3{
+			width: 107px;
+			height: 27px;
+			top: 220px;
+			left: 312px;
+		}
+		.sec-map .sec-4{
+			width: 89px;
+			height: 23px;
+			top: 64px;
+			left: 274px;
+		}
+		.sec-map .sec-5{
+			width: 88px;
+			height: 23px;
+			top: 199px;
+			left: 488px;
+		}
+		.sec-map .sec-6{
+			width: 88px;
+			height: 23px;
+			top: 78px;
+			left: 123px;
+		}
+		.sec-map .sec-7{
+			width: 106px;
+			height: 23px;
+			top: 168px;
+			left: 137px;
+		}
+		.sec-map .sec-8{
+			width: 98px;
+			height: 23px;
+			left: 156px;
+			top: 118px;
+		}
+		.sec-map .sec-9{
+			width: 148px;
+			height: 100px;
+			top: 433px;
+			left: 211px;
+		}
+		.sec-map .sec-10{
+			width: 148px;
+			height: 100px;
+			top: 433px;
+			left: 373px;
+		}
+		.sec-map .sec-11{
+			width: 89px;
+			height: 23px;
+			top: 68px;
+			left: 400px;
+		}
+		.sec-map .sec-12{
+			width: 95px;
+			height: 23px;
+			top: 101px;
+			left: 444px;
+		}
+		.sec-map .sec-13{
+			width: 111px;
+			height: 27px;
+			top: 266px;
+			left: 125px;
+		}
+
+</style>
+</head>
+<body>
+<div class="sec-map" >
+				<img src="https://www.army.mil.kr/event/security/images/security_map.jpg" alt="">
+				<button onclick="window.location.href='http://www.armyfest.or.kr'" class="sec-1">지상군페스티벌 체험</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub2_2.jsp'" class="sec-2">특전캠프 체험</button>
+				<button onclick="window.location.href='http://www.army.mil.kr/event/visit/'" target="_blank" class="sec-3">나라사랑계룡대견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_2.jsp'" class="sec-4">승리전망대견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_3.jsp'" class="sec-5">칠성전망대견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_4.jsp'" class="sec-6">판문점견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_5.jsp'" class="sec-7">임진각,도라산,3땅굴</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_6.jsp'" class="sec-8">오두산전망대견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_7.jsp'" class="sec-9">맹호부대 안보견학</button>
+				<!--<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_8.jsp'" class="sec-10">20사단안보견학/병영체험</button>-->
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_9.jsp'" class="sec-11">통일전망대 견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_10.jsp'" class="sec-12">제4땅굴 견학</button>
+				<button onclick="window.location.href='https://www.army.mil.kr/event/security/sub3_11.jsp'" class="sec-13">여학생 나라사랑 캠프</button>
+			</div>
+<body/>
+</html>

@@ -24,12 +24,18 @@ class MainVM:ViewModel() {
             if(to==0){
                 initCemetery(db,prefrnc,progressBar)
                 initRelics(db,prefrnc,progressBar)
-
+                initSale(db,prefrnc,progressBar)
             }else if(to==1){
                 withContext(Dispatchers.Main){
                     progressBar.progress = 50
                 }
                 initRelics(db,prefrnc,progressBar)
+                initSale(db,prefrnc,progressBar)
+            }else if(to==2){
+                withContext(Dispatchers.Main){
+                    progressBar.progress = 85
+                }
+                initSale(db,prefrnc,progressBar)
             }
             withContext(Dispatchers.Main){
                 progressBar.dismiss()
@@ -43,6 +49,10 @@ class MainVM:ViewModel() {
     private suspend fun initRelics(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog) = coroutineScope{
         downloadRelics(db,progressBar)
         initPrefrncRelics(prefrnc,progressBar)
+    }
+    private suspend fun initSale(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog) = coroutineScope{
+        downloadSale(db,progressBar)
+        initPrefrncSale(prefrnc,progressBar)
     }
 
     private suspend fun downloadCemetery(db:AppDB, progressBar: ProgressDialog) = coroutineScope {
@@ -86,9 +96,15 @@ class MainVM:ViewModel() {
             for(i in 0..div){
                 delay(350)
                 withContext(Dispatchers.Main){
-                    progressBar.progress += 45/div
+                    progressBar.progress += 30/div
                 }
             }
+        }
+    }
+    private suspend fun downloadSale(db:AppDB, progressBar: ProgressDialog) = coroutineScope{
+        db.dbDao().insertSale(MndAPI.request.getSale(1,65535).SALE.row)
+        withContext(Dispatchers.Main){
+            progressBar.progress += 10
         }
     }
     private suspend fun initPrefrncCemetery(prefrnc: SharedPreferences, progressBar: ProgressDialog){
@@ -102,6 +118,13 @@ class MainVM:ViewModel() {
     private suspend fun initPrefrncRelics(prefrnc: SharedPreferences, progressBar: ProgressDialog){
         prefrnc.edit()
             .putInt("relicsCount", GithubAPI.request.getVersion().relicsCount!!)
+            .apply()
+
+        progressBar.progress += 5
+    }
+    private suspend fun initPrefrncSale(prefrnc: SharedPreferences, progressBar: ProgressDialog){
+        prefrnc.edit()
+            .putInt(MndAPI.TYPE.SALE, MndAPI.request.getSale(1,1).SALE.count)
             .apply()
 
         progressBar.progress += 5

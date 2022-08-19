@@ -21,6 +21,8 @@ object MndAPI {
     object TYPE{
         const val CEMETERY_1 = "DS_TB_MND_NTNLMMCMT_BURALPRSTS"
         const val CEMETERY_2 = "DS_SEOULMMCMT_GRV_BURALP"
+        const val SALE = "DS_MND_ENLSTMN_DCNT_BEF_INF"
+
     }
 
     val request: Request by lazy {
@@ -39,5 +41,8 @@ interface Request {
 
     @GET("${MndAPI.TYPE.CEMETERY_2}/{startIndex}/{endIndex}")
     suspend fun getCemetery2(@Path("startIndex") startIndex: Int,@Path("endIndex") endIndex: Int): ResponseData
+
+    @GET("${MndAPI.TYPE.SALE}/{startIndex}/{endIndex}")
+    suspend fun getSale(@Path("startIndex") startIndex: Int,@Path("endIndex") endIndex: Int): ResponseData
 
 }
