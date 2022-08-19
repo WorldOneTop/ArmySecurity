@@ -10,6 +10,8 @@
     <string name="add">추가</string>
     <string name="close">닫기</string>
     <string name="reset">초기화</string>
+    <string name="guide_service">고객센터 : </string>
+    <string name="guide_page">홈페이지 방문</string>
 
     <!--    search fragment-->
     <string name="edit">입력</string>
@@ -74,6 +76,11 @@
     <string name="war_field_chrtrst">특징</string>
     <string name="war_field_wrtmyn">전시 여부\n(Y/N)</string>
 
+    <string name="war_main_title">호국의지\n    함양을 위한 안보교육도장</string>
+    <string name="war_main_sub_title">전쟁기념관 | The War Memorial of Korea</string>
+    <string name="war_main_content">전쟁기념관은 \'전쟁\'을 단일 주제로 우리나라 5천년 역사를 조망하는 대한민국 대표 전쟁사 종합 박물관이다. 1994년 6월 10일 개관한 이래 호국안보와 상무정신 함양의 도장으로서 연간 200만 명 이상의 내외국인이 찾는 대한민국 대표 명소이기도 하다. 호국추모실, 전쟁역사실, 6·25전쟁실, 해외파병실, 국군발전실, 기증실, 대형장비실 등 7개 실내 전시실과 각종 대형 무기들이 전시되어 있는 옥외 전시장으로 구성되어 있다. 이들 전시실에는 그 옛날 대륙을 석권했던 선조들의 웅혼한 기상으로부터 전 국민이 단결하여 침략자를 응징했던 승전의 역사들, 국력이 쇠잔해져 나라를 빼앗긴 후 이를 되찾기 위해 피맺힌 투쟁을 벌인 역사, 강군으로 성장한 우리 군의 발자취 등이 각종 유물과 영상, 패널, 디오라마, 기록화 등으로 실감나게 재현되어 있다. 대지 면적 116,748㎡에 지하 2층, 지상 4층으로 구성되어 있으며 3만 4천 여 점의 소장품 중 6,300여 점이 전시 중이다. 기념관 전시실 입구 양쪽 회랑에는 창군 이래 나라를 위해 목숨 바친 국군 전사자와 유엔군 전사자를 추모하는 명비가 설치되어 있다.</string>
+    <string name="war_main_service_num">02–709–3139</string>
+    <string name="war_main_page">https://www.warmemo.or.kr/front/viewInfo/convenient.do</string>
 
     <!--    Trip Fragment-->
     <string name="trip_field_name">프로그램 명</string>
