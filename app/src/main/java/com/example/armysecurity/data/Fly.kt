@@ -8,6 +8,8 @@ import org.parceler.ParcelConstructor
 @Keep
 @Parcel(Parcel.Serialization.BEAN)
 data class Fly @ParcelConstructor constructor(
+    @SerializedName("rowno")
+    val id:String,
     @SerializedName("enatvnm")
     val enatvnm:String,
     @SerializedName("dates")

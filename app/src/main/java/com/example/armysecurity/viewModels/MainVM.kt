@@ -9,13 +9,53 @@ import androidx.lifecycle.ViewModel
 import android.widget.ProgressBar
 import com.example.armysecurity.api.GithubAPI
 import com.example.armysecurity.api.MndAPI
+import com.example.armysecurity.data.MyData
+import com.example.armysecurity.data.MyDataList
 import com.example.armysecurity.db.AppDB
 import com.example.armysecurity.db.PreFrncManager
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import kotlinx.coroutines.*
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.lang.Exception
 
 class MainVM:ViewModel() {
     val div = 5
+    lateinit var myData: MyDataList
+    val FILE_NAME = "myData"
 
+    fun initMyData(context:Context){
+        myData = try{
+            val string = context.openFileInput(FILE_NAME).bufferedReader().readText()
+            Gson().fromJson((string), MyDataList::class.java)
+        }catch (e:FileNotFoundException){
+            MyDataList(ArrayList())
+        }
+    }
+
+    fun addData(context: Context, data:MyData){
+        myData.list.add(data)
+        saveData(context)
+    }
+    fun removeData(context:Context, data:MyData){
+        myData.list.remove(data)
+        saveData(context)
+    }
+    private fun saveData(context: Context){
+        val string = Gson().toJson(myData)
+        context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE).use {
+            it.write(string.toByteArray())
+        }
+    }
+    fun isBookmarke(data:MyData):String?{
+        for(d in myData.list){
+            if(d.isEqual(data))
+                return d.memo
+        }
+        return null
+    }
 
     fun initDownload(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog,to:Int = 0){
         progressBar.progress = 0

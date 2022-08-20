@@ -75,6 +75,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initDownload(){
+        viewModel.initMyData(applicationContext)
+
         val progressBar = ProgressDialog(this)
         progressBar.setCancelable(false)
         progressBar.setMessage(getString(R.string.guide_init_download))

@@ -23,5 +23,6 @@
     <color name="darkGray">#494949</color>
     <color name="white">#FFFFFF</color>
     <color name="lightGray">#c7c7c7</color>
+    <color name="red">#aaff0000</color>
 
 </resources>
