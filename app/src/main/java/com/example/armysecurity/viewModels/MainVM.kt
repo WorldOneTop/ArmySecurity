@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import android.widget.ProgressBar
+import androidx.lifecycle.MutableLiveData
 import com.example.armysecurity.api.GithubAPI
 import com.example.armysecurity.api.MndAPI
 import com.example.armysecurity.data.MyData
@@ -24,6 +25,7 @@ import java.lang.Exception
 class MainVM:ViewModel() {
     val div = 5
     lateinit var myData: MyDataList
+    var myLiveData: MutableLiveData<List<MyData>> = MutableLiveData<List<MyData>>()
     val FILE_NAME = "myData"
 
     fun initMyData(context:Context){
@@ -33,6 +35,7 @@ class MainVM:ViewModel() {
         }catch (e:FileNotFoundException){
             MyDataList(ArrayList())
         }
+        myLiveData.value = myData.list
     }
 
     fun addData(context: Context, data:MyData){
@@ -43,8 +46,9 @@ class MainVM:ViewModel() {
         myData.list.remove(data)
         saveData(context)
     }
-    private fun saveData(context: Context){
+    fun saveData(context: Context){
         val string = Gson().toJson(myData)
+        myLiveData.value = myData.list
         context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE).use {
             it.write(string.toByteArray())
         }
@@ -56,6 +60,7 @@ class MainVM:ViewModel() {
         }
         return null
     }
+
 
     fun initDownload(db: AppDB, prefrnc:SharedPreferences, progressBar: ProgressDialog,to:Int = 0){
         progressBar.progress = 0

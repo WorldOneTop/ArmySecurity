@@ -30,7 +30,14 @@
         android:id="@+id/tab_btm_myPage"
         android:name="com.example.armysecurity.ui.MyPageFragment"
         android:label="fragment_my_page"
-        tools:layout="@layout/fragment_my_page" />
+        tools:layout="@layout/fragment_my_page" >
+        <action
+            android:id="@+id/action_tab_btm_myPage_to_cemeteryDetailFragment"
+            app:destination="@id/cemeteryDetailFragment" />
+        <action
+            android:id="@+id/action_tab_btm_myPage_to_warDetailFragment"
+            app:destination="@id/warDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tab_btm_search"
         android:name="com.example.armysecurity.ui.SearchFragment"

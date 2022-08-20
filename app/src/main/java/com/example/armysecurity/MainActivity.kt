@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if(navController.backQueue.size >= 4) {
+        if(navController.backQueue.size >= 3) {
             navController.navigateUp()
             if(navController.backQueue.size < 4)
                 binding.mainToolbarBack.visibility = View.GONE

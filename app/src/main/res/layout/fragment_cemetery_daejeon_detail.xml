@@ -22,79 +22,79 @@
         android:paddingVertical="20dp">
 
         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@string/cemetery_field_name"
+            style="@style/cemetery_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@{data.name}"
+            style="@style/cemetery_detail_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="1dp"
+            android:background="@color/primaryLightColor" />
 
+        <TextView
+            android:text="@string/cemetery_field_pname"
+            style="@style/cemetery_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
             <TextView
-                android:text="@string/cemetery_field_name"
-                style="@style/cemetery_detail_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="@{data.name}"
+                android:text="@{data.pname1}"
                 style="@style/cemetery_detail_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/primaryLightColor" />
-
             <TextView
-                android:text="@string/cemetery_field_pname"
-                style="@style/cemetery_detail_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="@{data.pname1}"
-                    style="@style/cemetery_detail_data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="@{data.pname2}"
-                    style="@style/cemetery_detail_data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:text="@{data.pname3}"
-                    style="@style/cemetery_detail_data"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/primaryLightColor" />
-
-            <TextView
-                android:text="@string/cemetery_field_birthday"
-                style="@style/cemetery_detail_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="@{data.birthday}"
+                android:text="@{data.pname2}"
                 style="@style/cemetery_detail_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/primaryLightColor" />
-
             <TextView
-                android:text="@string/cemetery_field_qualification"
-                style="@style/cemetery_detail_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="@{data.qualification}"
+                android:text="@{data.pname3}"
                 style="@style/cemetery_detail_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primaryLightColor" />
+
+        <TextView
+            android:text="@string/cemetery_field_birthday"
+            style="@style/cemetery_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@{data.birthday}"
+            style="@style/cemetery_detail_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/primaryLightColor" />
+
+        <TextView
+            android:text="@string/cemetery_field_qualification"
+            style="@style/cemetery_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@{data.qualification}"
+            style="@style/cemetery_detail_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
