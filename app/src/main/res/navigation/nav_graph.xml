@@ -71,7 +71,11 @@
         android:id="@+id/saleFragment"
         android:name="com.example.armysecurity.ui.event.SaleFragment"
         android:label="fragment_sale"
-        tools:layout="@layout/fragment_sale" />
+        tools:layout="@layout/fragment_sale" >
+        <action
+            android:id="@+id/action_saleFragment_to_warDetailFragment"
+            app:destination="@id/warDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tripFragment"
         android:name="com.example.armysecurity.ui.event.TripFragment"

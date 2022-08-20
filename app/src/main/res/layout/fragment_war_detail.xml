@@ -13,6 +13,9 @@
         <variable
             name="trip"
             type="com.example.armysecurity.data.Trip" />
+        <variable
+            name="sale"
+            type="com.example.armysecurity.data.Sale" />
     </data>
 
     <ScrollView
@@ -412,6 +415,132 @@
                     android:text="@{trip.convUrl()}"
                     style="@style/cemetery_detail_data"
                     android:autoLink="web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/saleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:text="@string/sale_field_rgn"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.rgn}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/sale_field_inst"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.instltnnm}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/sale_field_dcnt"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.dcntenatvnm}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/sale_field_stday"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.startday}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/sale_field_fnday"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.fnshday}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+
+                <TextView
+                    android:text="@string/sale_field_cnt"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.cntadr}"
+                    style="@style/cemetery_detail_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+                <TextView
+                    android:text="@string/guide_page"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.hmpg}"
+                    style="@style/cemetery_detail_data"
+                    android:autoLink="web"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/primaryLightColor" />
+                <TextView
+                    android:text="@string/sale_field_detail"
+                    style="@style/cemetery_detail_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="@{sale.dtlexpln}"
+                    style="@style/cemetery_detail_data"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 <View

@@ -26,5 +26,33 @@ class WarPagerAdapter(val vm:WarVM, fragmentManager: FragmentManager, lifecycle:
             4 -> WarPlcPage()
             else -> WarMainPage()
         }
+}
 
+class TripPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fragmentManager, lifecycle) {
+
+    override fun getItemCount(): Int {
+        return 2
+    }
+
+    override fun createFragment(position: Int): Fragment =
+        when (position) {
+            0 ->  TripInfoPage()
+            1 ->  TripListPage()
+            else -> TripInfoPage()
+        }
+}
+class FlyPagerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fragmentManager, lifecycle) {
+
+    override fun getItemCount(): Int {
+        return 2
+    }
+
+    override fun createFragment(position: Int): Fragment =
+        when (position) {
+            0 ->  FlyInfoPage()
+            1 ->  FlyListPage()
+            else -> FlyInfoPage()
+        }
 }

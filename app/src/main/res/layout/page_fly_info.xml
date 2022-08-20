@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:text="@string/fly_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/primaryColor"
+        android:textSize="62sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="34dp"/>
+
+    <TextView
+        android:text="@string/fly_main_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginVertical="8dp"/>
+    <TextView
+        android:text="@string/fly_main_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="50dp"/>
+    <Button
+        android:text="@string/guide_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="42dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <TextView
+        android:text="@string/fly_main_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="13sp"
+        android:layout_gravity="start"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/youtube"
+            android:src="@drawable/icon_youtube"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <View
+            android:layout_width="30dp"
+            android:layout_height="0dp"/>
+        <ImageView
+            android:id="@+id/instagrame"
+            android:src="@drawable/icon_instgrame"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <View
+            android:layout_width="30dp"
+            android:layout_height="0dp"/>
+        <ImageView
+            android:id="@+id/facebook"
+            android:src="@drawable/icon_facebook"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+    </androidx.core.widget.NestedScrollView>

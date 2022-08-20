@@ -73,6 +73,15 @@ interface DBDao {
     fun insertSale(data: List<Sale>)
     @Query("DELETE FROM Sale")
     suspend fun deleteSale()
+    @Query("SELECT * FROM Sale ORDER BY instltnnm ASC")
+    fun selectSale(): PagingSource<Int, Sale>
+    @Query("SELECT * FROM Sale WHERE rgn LIKE :value ORDER BY instltnnm ASC")
+    fun selectSaleRgn(value: String): PagingSource<Int, Sale>
+    @Query("SELECT * FROM Sale WHERE instltnnm LIKE :value ORDER BY instltnnm ASC")
+    fun selectSaleInst(value: String): PagingSource<Int, Sale>
+    @Query("SELECT * FROM Sale WHERE dcntenatvnm LIKE :value ORDER BY instltnnm ASC")
+    fun selectSaleDcnt(value: String): PagingSource<Int, Sale>
+
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insertWar(data: List<War>)

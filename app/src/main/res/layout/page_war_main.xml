@@ -38,31 +38,34 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:gravity="center"
         android:layout_marginTop="32dp">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/guide_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"/>
+            <TextView
+                android:text="@string/war_main_service_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="phone"/>
+        </LinearLayout>
         <TextView
-            android:text="@string/guide_service"
+            android:id="@+id/warHomepage"
+            android:text="@string/guide_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"/>
-        <TextView
-            android:text="@string/war_main_service_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoLink="phone"/>
-
+            android:layout_marginVertical="8dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/accentColor"/>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/warHomepage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:textColor="@color/accentColor"
-        tools:text="@string/guide_page" />
 
 </LinearLayout>
     </androidx.core.widget.NestedScrollView>

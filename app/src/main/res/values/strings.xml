@@ -11,6 +11,7 @@
     <string name="close">닫기</string>
     <string name="reset">초기화</string>
     <string name="guide_service">고객센터 : </string>
+
     <string name="guide_page">홈페이지 방문</string>
 
     <!--    search fragment-->
@@ -87,12 +88,30 @@
     <string name="trip_field_prps">목적</string>
     <string name="trip_field_methd">참여 방법</string>
     <string name="trip_field_guide">안내</string>
+    <string name="trip_main_title">육군 안보견학 현장체험</string>
+    <string name="trip_main_sub_title">안내대상 프로그램</string>
+    <string name="trip_main_content">- 공개부대자체 프로그램\n- 작전지역내에 위치한 안보현장\n- 지자체에서 주관하지만 부대와 연관된 프로그램으로 구성</string>
+
 
     <!--    Fly Fragment-->
     <string name="fly_field_name">행사 명</string>
     <string name="fly_field_date">행사 시기</string>
     <string name="fly_field_place">행사 장소</string>
     <string name="fly_field_page">홈페이지</string>
+
+    <string name="fly_main_title">Black Eagles</string>
+    <string name="fly_main_sub_title">대한민국 공군 특수비행팀, 블랙이글스</string>
+    <string name="fly_main_content">블랙이글스는 다양한 특수비행을 통해 공군의 조직적인 팀워크와 고도의 비행기량을 뽐내는 대한민국 특수비행팀입니다.</string>
+    <string name="fly_main_guide">* 일정은 행사당일 기상상황에 따라 변경될 수 있습니다.</string>
+
+    <!--    Sale Fragment-->
+    <string name="sale_field_rgn">지역</string>
+    <string name="sale_field_inst">시설 명</string>
+    <string name="sale_field_dcnt">할인 행사 명</string>
+    <string name="sale_field_stday">시작일</string>
+    <string name="sale_field_fnday">종료일</string>
+    <string name="sale_field_cnt">연락처</string>
+    <string name="sale_field_detail">상세 설명</string>
 
 
     <!--    안내 메시지-->
@@ -140,6 +159,12 @@
         <item>@string/war_field_obtm</item>
         <item>@string/war_field_relafr</item>
         <item>@string/war_field_wrtmyn</item>
+    </string-array>
+
+    <string-array name="sale_field_array">
+        <item>@string/sale_field_rgn</item>
+        <item>@string/sale_field_inst</item>
+        <item>@string/sale_field_dcnt</item>
     </string-array>
 
 </resources>

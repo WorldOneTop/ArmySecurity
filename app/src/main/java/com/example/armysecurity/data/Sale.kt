@@ -1,11 +1,16 @@
 package com.example.armysecurity.data
 
+import androidx.annotation.Keep
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import org.parceler.Parcel
+import org.parceler.ParcelConstructor
 
+@Keep
+@Parcel(Parcel.Serialization.BEAN)
 @Entity
-data class Sale(
+data class Sale @ParcelConstructor constructor(
     @PrimaryKey
     @SerializedName("rowno")
     val rowno:String,

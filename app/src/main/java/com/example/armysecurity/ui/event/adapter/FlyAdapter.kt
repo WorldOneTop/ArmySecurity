@@ -6,21 +6,24 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.armysecurity.data.Cemetery
+import com.example.armysecurity.data.Fly
+import com.example.armysecurity.data.Trip
 import com.example.armysecurity.databinding.RowCemeteryBinding
+import com.example.armysecurity.databinding.RowWarBinding
 
-class FlyAdapter (private val onItemClickListener: ((Cemetery) -> Unit)) : PagingDataAdapter<Cemetery, FlyViewHolder>(DIFF_CALLBACK) {
-    companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Cemetery>() {
-            override fun areItemsTheSame(oldItem: Cemetery, newItem: Cemetery): Boolean =
-                oldItem.id == newItem.id
+class FlyAdapter (private val onItemClickListener: ((Fly) -> Unit)) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val data: ArrayList<Fly> = arrayListOf()
 
-            override fun areContentsTheSame(oldItem: Cemetery, newItem: Cemetery): Boolean =
-                oldItem == newItem
-        }
+    fun setData(data: List<Fly>) {
+        val prev = this.data.size
+        this.data.clear()
+        notifyItemRangeRemoved(0, prev)
+
+        this.data.addAll(data)
+        notifyItemRangeInserted(0, data.size + 1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlyViewHolder {
-
         return FlyViewHolder(
             RowCemeteryBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
@@ -28,19 +31,22 @@ class FlyAdapter (private val onItemClickListener: ((Cemetery) -> Unit)) : Pagin
         )
     }
 
-    override fun onBindViewHolder(holder: FlyViewHolder, position: Int) {
-        holder.bind(getItem(position))
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        (holder as FlyViewHolder).bind(data[position])
     }
+
+    override fun getItemCount(): Int  = data.size
+
 
 }
 
-class FlyViewHolder(private val binding: RowCemeteryBinding, private val onItemClickListener: ((Cemetery) -> Unit)): RecyclerView.ViewHolder(binding.root) {
-    var data: Cemetery? = null
+class FlyViewHolder(private val binding: RowCemeteryBinding, private val onItemClickListener: ((Fly) -> Unit)): RecyclerView.ViewHolder(binding.root) {
+    var data: Fly? = null
 
-    fun bind(data: Cemetery?){
-        binding.name.text = data?.name
-        binding.rank.text = data?.rank
-        binding.identity.text = data?.identity
+    fun bind(data: Fly?){
+        binding.name.text = data?.enatvnm
+        binding.rank.text = data?.plc
+        binding.identity.text = data?.dates
 
         binding.root.setOnClickListener{
             data?.let{onItemClickListener(it)}

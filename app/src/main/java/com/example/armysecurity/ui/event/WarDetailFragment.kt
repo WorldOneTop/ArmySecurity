@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.armysecurity.R
-import com.example.armysecurity.data.Relics
-import com.example.armysecurity.data.Trip
-import com.example.armysecurity.data.War
-import com.example.armysecurity.data.WarMan
+import com.example.armysecurity.data.*
 import com.example.armysecurity.databinding.FragmentCemeteryDaejeonDetailBinding
 import com.example.armysecurity.databinding.FragmentCemeterySeoulDetailBinding
 import com.example.armysecurity.databinding.FragmentWarDetailBinding
@@ -21,6 +18,7 @@ class WarDetailFragment : Fragment() {
     private var war: War? = null
     private var warMan: WarMan? = null
     private var trip: Trip? = null
+    private var sale: Sale? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +29,7 @@ class WarDetailFragment : Fragment() {
                 "War" -> war = Parcels.unwrap(it.getParcelable("data"))
                 "WarMan" -> warMan = Parcels.unwrap(it.getParcelable("data"))
                 "Trip" -> trip = Parcels.unwrap(it.getParcelable("data"))
+                "Sale" -> sale = Parcels.unwrap(it.getParcelable("data"))
             }
         }
     }
@@ -54,6 +53,10 @@ class WarDetailFragment : Fragment() {
         trip?.let {
             binding.trip = it
             binding.tripLayout.visibility = View.VISIBLE
+        }
+        sale?.let {
+            binding.sale = it
+            binding.saleLayout.visibility = View.VISIBLE
         }
         return binding.root
     }
