@@ -76,7 +76,11 @@
         android:id="@+id/tripFragment"
         android:name="com.example.armysecurity.ui.event.TripFragment"
         android:label="fragment_trip"
-        tools:layout="@layout/fragment_trip" />
+        tools:layout="@layout/fragment_trip" >
+        <action
+            android:id="@+id/action_tripFragment_to_warDetailFragment"
+            app:destination="@id/warDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/warFragment"
         android:name="com.example.armysecurity.ui.event.WarFragment"
@@ -115,31 +119,4 @@
         android:name="com.example.armysecurity.ui.event.WarDetailFragment"
         android:label="fragment_war_detail"
         tools:layout="@layout/fragment_war_detail" />
-    <fragment
-        android:id="@+id/warInfoPage"
-        android:name="com.example.armysecurity.ui.event.WarInfoPage"
-        android:label="page_war_info"
-        tools:layout="@layout/page_war_info" >
-        <action
-            android:id="@+id/action_warInfoPage_to_warDetailFragment"
-            app:destination="@id/warDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/warRelicsPage"
-        android:name="com.example.armysecurity.ui.event.WarRelicsPage"
-        android:label="page_war_relics"
-        tools:layout="@layout/page_war_relics" >
-        <action
-            android:id="@+id/action_warRelicsPage_to_warDetailFragment"
-            app:destination="@id/warDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/warManPage"
-        android:name="com.example.armysecurity.ui.event.WarManPage"
-        android:label="page_war_man"
-        tools:layout="@layout/page_war_man" >
-        <action
-            android:id="@+id/action_warManPage_to_warDetailFragment"
-            app:destination="@id/warDetailFragment" />
-    </fragment>
 </navigation>

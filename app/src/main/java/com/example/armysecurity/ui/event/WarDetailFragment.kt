@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.armysecurity.R
 import com.example.armysecurity.data.Relics
+import com.example.armysecurity.data.Trip
 import com.example.armysecurity.data.War
 import com.example.armysecurity.data.WarMan
 import com.example.armysecurity.databinding.FragmentCemeteryDaejeonDetailBinding
@@ -19,17 +20,17 @@ class WarDetailFragment : Fragment() {
     private var relics: Relics? = null
     private var war: War? = null
     private var warMan: WarMan? = null
+    private var trip: Trip? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentWarDetailBinding.inflate(layoutInflater)
         arguments?.let {
-            if(it.getString("type") == "Relics"){
-                relics = Parcels.unwrap(it.getParcelable("data"))
-            }else if(it.getString("type") == "War"){
-                war = Parcels.unwrap(it.getParcelable("data"))
-            }else if(it.getString("type") == "WarMan"){
-                warMan = Parcels.unwrap(it.getParcelable("data"))
+            when(it.getString("type")){
+                "Relics" -> relics = Parcels.unwrap(it.getParcelable("data"))
+                "War" -> war = Parcels.unwrap(it.getParcelable("data"))
+                "WarMan" -> warMan = Parcels.unwrap(it.getParcelable("data"))
+                "Trip" -> trip = Parcels.unwrap(it.getParcelable("data"))
             }
         }
     }
@@ -49,6 +50,10 @@ class WarDetailFragment : Fragment() {
         warMan?.let {
             binding.warMan = it
             binding.WarManLayout.visibility = View.VISIBLE
+        }
+        trip?.let {
+            binding.trip = it
+            binding.tripLayout.visibility = View.VISIBLE
         }
         return binding.root
     }

@@ -26,5 +26,7 @@ data class WarMan @ParcelConstructor constructor(
     @PrimaryKey(autoGenerate = true)
     val id:Int = 0
 ){
-    fun brToN() = content.replace("<br/>", "\n")
+    fun brToN() = content
+        .replace("<br/>", "\n")
+        .replace("&#39", "'")
 }
