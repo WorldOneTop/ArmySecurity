@@ -113,6 +113,11 @@
     <string name="sale_field_cnt">연락처</string>
     <string name="sale_field_detail">상세 설명</string>
 
+<!--    pledge Fragment-->
+    <string name="pledge_sound1">국기에 대한 경례</string>
+    <string name="pledge_sound2">애국가 제창 (1~4절)</string>
+    <string name="pledge_sound3">순국선열 및 호국영령에 대한 묵념</string>
+
 
     <!--    안내 메시지-->
     <string name="guide_init_download">최초 데이터 로딩중입니다.</string>
