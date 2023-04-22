@@ -1,8 +1,9 @@
 # 너의 안보는
 > 현충원에 안장된 분들, 호국 영령과 전투 정보, 육군 행사등을 확인할 수 있는 앱   
-> 관련 링크 : <a href="https://github.com/WorldOneTop/ArmySecurityFile">관련 파일(개인정보방침, API 정적 파일)</a>
-국방 데이터 활용 경진대회 출품작
-사용 공공 API: <a href="https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15097467">대전현충원</a> 및 <https://data.mnd.go.kr/mbshome/mbs/data/subview.jsp?id=data_020000000000&dataUrl=openapi">국방 관련 데이터(국립 현충원, 행사 등) 7건</a>
+> 관련 링크 : <a href="https://github.com/WorldOneTop/ArmySecurityFile">관련 파일(개인정보방침, API 정적 파일)</a>    
+
+국방 데이터 활용 경진대회 출품작   
+사용 공공 API: <a href="https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15097467">대전현충원</a> 및 <a href= "https://data.mnd.go.kr/mbshome/mbs/data/subview.jsp?id=data_020000000000&dataUrl=openapi">국방 관련 데이터(국립 현충원, 행사 등) 7건</a>
 
 <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=Android&logoColor=white"> <img src="https://img.shields.io/badge/kotlin-7F52FF?style=for-the-badge&logo=Gradle&logoColor=white">
 
@@ -31,6 +32,14 @@
 현충원   
 <img src="https://user-images.githubusercontent.com/45085513/233699257-ecb351f9-fa13-41e8-9b8e-5d37246d30d7.png" width="25%" height="40%">
 
+## 실행 화면
+https://user-images.githubusercontent.com/45085513/233797459-dcabf2b3-96fd-4db6-a679-c0f797b06dcf.mp4
+
+https://user-images.githubusercontent.com/45085513/233797462-5b5670dc-d82f-43fb-ad46-a172fa6f58b0.mp4
+
+https://user-images.githubusercontent.com/45085513/233797463-5df1639a-2b1d-45a1-ae1e-b93fc87a8186.mp4
+
+https://user-images.githubusercontent.com/45085513/233797456-c13ad0c4-030a-4820-b468-a6f72f22188d.mp4
 
 
 
